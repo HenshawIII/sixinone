@@ -1,26 +1,142 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --site-bg: #ffffff;
+  --site-text: #121212;
+  --site-muted: #5d6370;
+  --site-soft: #f3f4f6;
+  --site-dark: #101114;
+  --brand-red: #ff5e36;
+  --brand-primary: #e3431c;
+  --brand-orange: #ff9f26;
+  --brand-yellow: #f5c940;
+  --brand-purple: #866ef5;
+  --brand-blue: #39baed;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-site-bg: var(--site-bg);
+  --color-site-text: var(--site-text);
+  --color-site-muted: var(--site-muted);
+  --color-site-soft: var(--site-soft);
+  --color-site-dark: var(--site-dark);
+  --color-brand-red: var(--brand-red);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-yellow: var(--brand-yellow);
+  --color-brand-purple: var(--brand-purple);
+  --color-brand-blue: var(--brand-blue);
+  --font-body: "Avenir Next", "Avenir", "Segoe UI", sans-serif;
+  --font-heading: "Avenir Next Condensed", "Avenir Next", "Segoe UI", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "Avenir Next";
+  src: url("/AvenirNext/AvenirNextCyr-Light.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("/AvenirNext/AvenirNextCyr-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("/AvenirNext/AvenirNextCyr-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("/AvenirNext/AvenirNextCyr-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir Next Condensed";
+  src: url("/Avenir Next Condensed.ttc") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir Next Condensed";
+  src: url("/Avenir Next Condensed.ttc") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--site-bg);
+  color: var(--site-text);
+}
+
+@keyframes home-slider-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.home-image-slider-track {
+  display: flex;
+  width: max-content;
+  gap: 1.25rem;
+  animation: home-slider-scroll 30s linear infinite;
+  will-change: transform;
+  animation-play-state: running;
+}
+
+.home-image-slider-track:hover {
+  animation-play-state: running;
+}
+
+.section-wrap {
+  @apply mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20;
+}
+
+.section-white {
+  @apply bg-white text-site-text;
+}
+
+.section-soft {
+  @apply bg-site-soft text-site-text;
+}
+
+.section-dark {
+  @apply bg-site-dark text-white;
+}
+
+.surface-card {
+  @apply rounded-3xl border border-black/10 bg-white p-6 shadow-[0_16px_40px_rgba(15,23,42,0.08)] sm:p-8;
+}
+
+.surface-card-dark {
+  @apply rounded-3xl border border-white/15 bg-white/5 p-6 text-white shadow-[0_18px_50px_rgba(0,0,0,0.35)] sm:p-8;
+}
+
+.button-brand {
+  @apply inline-flex items-center justify-center rounded-full bg-brand-primary px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90;
+}
+
+.button-secondary {
+  @apply inline-flex items-center justify-center rounded-full border border-black/20 px-5 py-3 text-sm font-semibold text-site-text transition hover:border-black hover:bg-black/5;
+}
+
+.button-secondary-dark {
+  @apply inline-flex items-center justify-center rounded-full border border-white/30 px-5 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10;
 }

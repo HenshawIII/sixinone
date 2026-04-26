@@ -1,0 +1,8 @@
+export const SITE_NAV_LINKS = [
+  { href: "/", label: "Home" },
+  { href: "/companies", label: "Companies" },
+  { href: "/entertainment", label: "Entertainment" },
+  { href: "/publishing", label: "Publishing" },
+  { href: "/blog", label: "Blog" },
+  { href: "/founder-contact", label: "Founder + Contact" },
+] as const;
