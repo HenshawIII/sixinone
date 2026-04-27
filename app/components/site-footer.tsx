@@ -5,7 +5,7 @@ export function SiteFooter() {
   return (
     <footer className=" bg-black!">
       <div className="bg-white! rounded-t-[2.25rem] w-full ">
-      <div className="mx-auto w-full max-w-[90%] px-2 py-16 sm:py-20">
+      <div className="mx-auto w-full max-w-[90%] px-4 py-16 sm:py-20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-5">
             <Link href="/" className="inline-flex">

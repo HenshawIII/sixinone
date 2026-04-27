@@ -1,5 +1,5 @@
-import { HomeHero } from "./components/home-hero";
-import { HomeTwoFacesSection } from "./components/home-two-faces-section";
+import { HomeHero } from "./components/home/home-hero";
+import { HomeTwoFacesSection } from "./components/home/home-two-faces-section";
 import { PageReveal } from "./components/page-reveal";
 import { SiteCta } from "./components/site-cta";
 import { homeCopy } from "./lib/site-data";

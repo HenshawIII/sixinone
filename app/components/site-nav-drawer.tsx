@@ -39,7 +39,7 @@ export function SiteNavDrawer({ open, onClose, items }: SiteNavDrawerProps) {
     <>
       <div
         aria-hidden={!open}
-        className={`fixed inset-0 z-100 bg-black/10 transition-opacity duration-300 ease-out ${
+        className={`fixed inset-0 z-100 bg-black/40 transition-opacity duration-300 ease-out ${
           open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         }`}
         onClick={onClose}
@@ -55,7 +55,7 @@ export function SiteNavDrawer({ open, onClose, items }: SiteNavDrawerProps) {
         <div className="flex items-center justify-between border-b border-white/30 px-6 py-5">
           <button
             aria-label="Close menu"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-primary/45 text-brand-primary transition hover:bg-brand-primary/15"
+            className="flex h-10 w-10 items-center justify-center rounded-full  text-brand-primary transition hover:bg-brand-primary/15"
             onClick={onClose}
             type="button"
           >

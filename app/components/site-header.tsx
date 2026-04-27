@@ -25,14 +25,15 @@ export function SiteHeader() {
   }, [onScroll]);
 
   const onHome = pathname === "/";
-  const useLightChrome = onHome && !scrolled && !drawerOpen;
+  const useTransparentHeader = onHome && !scrolled;
+  const useLightChrome = useTransparentHeader && !drawerOpen;
 
   return (
     <header
       className={`fixed left-0 right-0 top-0 z-50 h-20 transition-[background-color,backdrop-filter,border-color,box-shadow] duration-300 ease-out ${
-        scrolled
-          ? "border-b border-black/10 bg-brand-primary shadow-sm backdrop-blur-md"
-          : "border-b border-transparent bg-transparent shadow-none"
+        useTransparentHeader
+          ? "border-b border-transparent bg-transparent shadow-none"
+          : "border-b border-black/10 bg-brand-primary shadow-sm backdrop-blur-md"
       }`}
     >
       <div className="mx-auto flex h-full w-full max-w-[90%] items-center justify-between gap-4 px-2">
