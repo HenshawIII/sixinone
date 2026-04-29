@@ -25,15 +25,34 @@ export function SiteHeader() {
   }, [onScroll]);
 
   const onHome = pathname === "/";
+  const onEntertainment = pathname.startsWith("/entertainment");
+  const onPublishing = pathname.startsWith("/publishing");
   const useTransparentHeader = onHome && !scrolled;
   const useLightChrome = useTransparentHeader && !drawerOpen;
+  const brandLogoSrc = useLightChrome
+    ? "/logoWhite.png"
+    : onEntertainment
+      ? "/logoEnt.png"
+      : onPublishing
+        ? "/logoPub.png"
+        : "/logoWhite.png";
+  const brandLogoAlt = onEntertainment
+    ? "6in1 Entertainment"
+    : onPublishing
+      ? "6in1 Publishing"
+      : "6in1 Group";
+  const routeHeaderClass = onEntertainment
+    ? "border-b border-black/10 bg-[#ffb400] shadow-sm backdrop-blur-md"
+    : onPublishing
+      ? "border-b border-black/10 bg-[#864ef5] shadow-sm backdrop-blur-md"
+      : "border-b border-black/10 bg-brand-primary shadow-sm backdrop-blur-md";
 
   return (
     <header
       className={`fixed left-0 right-0 top-0 z-50 h-20 transition-[background-color,backdrop-filter,border-color,box-shadow] duration-300 ease-out ${
         useTransparentHeader
           ? "border-b border-transparent bg-transparent shadow-none"
-          : "border-b border-black/10 bg-brand-primary shadow-sm backdrop-blur-md"
+          : routeHeaderClass
       }`}
     >
       <div className="mx-auto flex h-full w-full max-w-[90%] items-center justify-between gap-4 px-2">
@@ -43,8 +62,8 @@ export function SiteHeader() {
           aria-label="6in1 Group home"
         >
           <Image
-            src={useLightChrome ? "/logoWhite.png" : "/logoWhite.png"}
-            alt="6in1 Group"
+            src={brandLogoSrc}
+            alt={brandLogoAlt}
             width={220}
             height={62}
             className="h-10 w-auto object-contain object-left sm:h-14"

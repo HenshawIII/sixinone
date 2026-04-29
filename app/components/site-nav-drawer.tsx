@@ -4,6 +4,7 @@ import Link from "next/link";
 import { X } from "lucide-react";
 import { useEffect, useId } from "react";
 import { createPortal } from "react-dom";
+import { usePathname } from "next/navigation";
 import { useMounted } from "./use-mounted";
 
 type NavItem = { readonly href: string; readonly label: string };
@@ -16,7 +17,13 @@ type SiteNavDrawerProps = {
 
 export function SiteNavDrawer({ open, onClose, items }: SiteNavDrawerProps) {
   const mounted = useMounted();
+  const pathname = usePathname();
   const sidebarRingId = `${useId().replace(/:/g, "")}-drawer-ring`;
+  const navHoverClass = pathname.startsWith("/entertainment")
+    ? "hover:text-[#ffb400]"
+    : pathname.startsWith("/publishing")
+      ? "hover:text-[#864ef5]"
+      : "hover:text-brand-red";
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -67,7 +74,7 @@ export function SiteNavDrawer({ open, onClose, items }: SiteNavDrawerProps) {
             {items.map((item) => (
               <li key={item.href} className="border-b border-white/25">
                 <Link
-                  className="block py-5 font-heading text-lg uppercase tracking-[0.05em] text-white transition hover:text-brand-red"
+                  className={`block py-5 font-heading text-lg uppercase tracking-[0.05em] text-white transition ${navHoverClass}`}
                   href={item.href}
                   onClick={onClose}
                 >

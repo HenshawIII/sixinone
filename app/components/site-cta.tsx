@@ -6,13 +6,15 @@ type SiteCtaProps = {
   title?: string;
   buttonLabel?: string;
   buttonHref?: string;
+  buttonClassName?: string;
 };
 
 export function SiteCta({
   eyebrow = "Let's Work Together",
   title = "Ready to shape your next chapter?",
   buttonLabel = "Contact Us",
-  buttonHref = "/founder-contact",
+  buttonHref = "/contact",
+  buttonClassName,
 }: SiteCtaProps) {
   return (
     <section className="section-white pt-0">
@@ -31,7 +33,7 @@ export function SiteCta({
             <div className="max-w-2xl">
               <p className="font-heading text-xs uppercase tracking-[0.28em] text-white/65">{eyebrow}</p>
               <h2 className="mt-3 font-heading text-4xl leading-tight sm:text-5xl">{title}</h2>
-              <Link className="button-brand mt-7 px-8 py-3.5 text-base" href={buttonHref}>
+              <Link className={`button-brand mt-7 px-8 py-3.5 text-base ${buttonClassName ?? ""}`} href={buttonHref}>
                 {buttonLabel}
               </Link>
             </div>

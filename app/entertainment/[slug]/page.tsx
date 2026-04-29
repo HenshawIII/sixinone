@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { PageHeroBand } from "../../components/page-hero-band";
 import { PageReveal } from "../../components/page-reveal";
 import { SiteCta } from "../../components/site-cta";
 import { allTalent } from "../../lib/site-data";
 import { SimpleForm } from "../../components/simple-form";
+import { getTalentImage } from "../../lib/talent-images";
 
 type Params = { slug: string };
 
@@ -20,6 +22,7 @@ export default async function TalentProfilePage({
   const { slug } = await params;
   const talent = allTalent.find((item) => item.slug === slug);
   if (!talent) notFound();
+  const image = getTalentImage(talent.slug, talent.name, talent.kind);
 
   return (
     <>
@@ -34,11 +37,25 @@ export default async function TalentProfilePage({
           </Link>
         }
       />
-      <section className="section-soft">
-        <div className="section-wrap space-y-8">
-          <div data-reveal className="surface-card">
-            <p className="text-sm text-site-muted">Identity</p>
-            <p className="font-heading text-xl text-site-text">{talent.identity}</p>
+      <section className="section-soft bg-black! pt-0">
+        <div data-reveal className="mx-auto w-full max-w-full overflow-hidden rounded-t-[2.25rem] bg-site-soft">
+          <div className="section-wrap space-y-8">
+            <div data-reveal className="relative overflow-hidden rounded-2xl border border-black/10 bg-black/5">
+              <div className="relative aspect-16/7 min-h-[220px]">
+                <Image alt={image.alt} className="object-cover" fill priority sizes="(max-width: 1024px) 100vw, 1200px" src={image.src} />
+              </div>
+              <div aria-hidden className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/45 via-black/5 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+                <p className="font-heading text-2xl text-white sm:text-3xl">{talent.name}</p>
+                <p className="mt-2 inline-flex rounded-full bg-[#ffb400] px-4 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-white">
+                  {talent.kind === "musician" ? "Artist" : "Athlete"} Profile
+                </p>
+              </div>
+            </div>
+            <div data-reveal className="surface-card">
+              <p className="text-sm text-site-muted">Identity</p>
+              <p className="font-heading text-xl text-site-text">{talent.identity}</p>
+            </div>
           </div>
         </div>
       </section>
@@ -52,7 +69,7 @@ export default async function TalentProfilePage({
                 <ul className="mt-4 space-y-2 text-site-muted">
                   {talent.discography.map((work) => (
                     <li key={work.title}>
-                      <a className="transition hover:text-site-text" href={work.link}>
+                      <a className="transition hover:text-site-text" href={work.link} target="_blank" rel="noreferrer noopener">
                         {work.title}
                       </a>
                     </li>
@@ -148,7 +165,11 @@ export default async function TalentProfilePage({
           </div>
         </div>
       </section>
-      <SiteCta title={`Interested in ${talent.name}?`} buttonLabel="Talk to Management" />
+      <SiteCta
+        title={`Interested in ${talent.name}?`}
+        buttonLabel="Talk to Management"
+        buttonClassName="!bg-[#ffb400] hover:!bg-[#e7a300]"
+      />
     </>
   );
 }

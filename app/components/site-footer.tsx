@@ -21,7 +21,7 @@ export function SiteFooter() {
               Built for talent. Driven by vision. 6in1 Group advances entertainment and publishing through strategic
               growth, rights-focused operations, and long-term brand development.
             </p>
-            <Link href="/founder-contact" className="button-brand mt-6">
+            <Link href="/contact" className="button-brand mt-6">
               Get In Touch
             </Link>
           </div>
@@ -42,7 +42,7 @@ export function SiteFooter() {
               links={[
                 { href: "/entertainment", label: "Entertainment" },
                 { href: "/publishing", label: "Publishing" },
-                { href: "/founder-contact", label: "Founder + Contact" },
+                { href: "/contact", label: "Contact" },
               ]}
             />
 
@@ -68,10 +68,10 @@ export function SiteFooter() {
         <div className="mt-12 flex flex-col gap-3 border-t border-black/10 pt-6 text-xs text-site-muted sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} 6in1 Group. All rights reserved.</p>
           <div className="flex gap-4">
-            <Link href="/founder-contact" className="transition hover:text-site-text">
+            <Link href="/contact" className="transition hover:text-site-text">
               Privacy
             </Link>
-            <Link href="/founder-contact" className="transition hover:text-site-text">
+            <Link href="/contact" className="transition hover:text-site-text">
               Terms
             </Link>
           </div>

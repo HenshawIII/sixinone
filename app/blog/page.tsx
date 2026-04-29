@@ -14,7 +14,7 @@ export default function BlogPage() {
         title="Company updates and industry perspective."
         description="Insights across entertainment, publishing, rights, and roster growth."
         actions={
-          <Link href="/founder-contact" className="button-secondary-dark">
+          <Link href="/contact" className="button-secondary-dark">
             Pitch a Story
           </Link>
         }

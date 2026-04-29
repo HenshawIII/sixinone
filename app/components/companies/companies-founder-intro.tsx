@@ -60,9 +60,9 @@ export function CompaniesFounderIntro() {
 
               <Link
                 className="group mt-10 inline-flex items-center gap-2 rounded-full bg-brand-primary px-6 py-3 text-sm font-semibold text-white shadow-[0_12px_32px_rgba(227,67,28,0.35)] transition hover:opacity-95"
-                href="/founder-contact"
+                href="/contact"
               >
-                Connect with leadership
+                Contact 6in1 Group
                 <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" aria-hidden />
               </Link>
             </div>
