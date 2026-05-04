@@ -39,12 +39,12 @@ const TALENT_IMAGE_MAP: Record<string, TalentImage> = {
     alt: "Vocal artist singing with a spotlight",
   },
   "ezekiel-touch": {
-    src: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=1400&q=80",
-    alt: "Professional boxer training in the ring",
+    src: "/Ezeikel.jpeg",
+    alt: "Ezekiel TOUCH — professional boxer portrait",
   },
   "adeyemi-emmanuel": {
-    src: "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=1400&q=80",
-    alt: "Athlete in boxing gloves during training",
+    src: "/Adeyem.jpeg",
+    alt: "Adeyemi Emmanuel — professional boxer portrait",
   },
 };
 

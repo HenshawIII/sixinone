@@ -21,13 +21,18 @@ export function EntertainmentRosterTabs({
     <section className=" bg-black!">
       <div className="s space-y-8 bg-white! w-full rounded-t-[2.25rem] py-16 px-4 sm:px-6 sm:py-20">
         <header className="mx-auto max-w-3xl text-center">
-          <h2 className="font-heading text-4xl uppercase tracking-[0.02em] text-site-text sm:text-5xl">Our Entertainment Roster</h2>
-          <p className="mt-4 text-base tracking-tight text-site-muted sm:text-lg">
+          <h2
+            className="font-heading text-4xl uppercase tracking-[0.02em] text-site-text sm:text-5xl"
+            data-reveal-text
+          >
+            Our Entertainment Roster
+          </h2>
+          <p className="mt-4 text-base tracking-tight text-site-muted sm:text-lg" data-reveal-text>
             Discover artists and athletes at a glance. Switch tabs to view either roster instantly without scrolling.
           </p>
         </header>
 
-        <div className="max-w-[90%] mx-auto rounded-3xl border border-black/10 bg-linear-to-br from-[#ffb400]/12 via-white to-white p-4 shadow-[0_8px_28px_rgba(0,0,0,0.08)] sm:p-6">
+        <div className="max-w-[94%] mx-auto rounded-3xl border border-black/10 bg-linear-to-br from-[#ffb400]/12 via-white to-white p-4 shadow-[0_8px_28px_rgba(0,0,0,0.08)] sm:max-w-[90%] sm:p-6">
           <div role="tablist" aria-label="Entertainment roster tabs" className="grid gap-2 sm:grid-cols-2">
             <button
               role="tab"
@@ -62,7 +67,13 @@ export function EntertainmentRosterTabs({
           </div>
 
           {activeTab === "artists" ? (
-            <div role="tabpanel" id="panel-artists" aria-labelledby="tab-artists" className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            <div
+              role="tabpanel"
+              id="panel-artists"
+              aria-labelledby="tab-artists"
+              className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3"
+              data-reveal-stagger
+            >
               {musicians.map((artist) => {
                 const image = getTalentImage(artist.slug, artist.name, artist.kind);
                 return (
@@ -83,7 +94,13 @@ export function EntertainmentRosterTabs({
               })}
             </div>
           ) : (
-            <div role="tabpanel" id="panel-athletes" aria-labelledby="tab-athletes" className="mt-6 grid gap-5 md:grid-cols-2">
+            <div
+              role="tabpanel"
+              id="panel-athletes"
+              aria-labelledby="tab-athletes"
+              className="mt-6 grid gap-5 md:grid-cols-2"
+              data-reveal-stagger
+            >
               {athletes.map((athlete) => {
                 const image = getTalentImage(athlete.slug, athlete.name, athlete.kind);
                 return (

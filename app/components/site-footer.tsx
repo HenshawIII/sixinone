@@ -1,17 +1,40 @@
+ "use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function SiteFooter() {
+  const pathname = usePathname();
+  const onEntertainment = pathname.startsWith("/entertainment");
+  const onPublishing = pathname.startsWith("/publishing");
+
+  const footerLogoSrc = onEntertainment
+    ? "/entFoot.png"
+    : onPublishing
+      ? "/pubFoot.png"
+      : "/logoGroup.png";
+  const footerLogoAlt = onEntertainment
+    ? "6in1 Entertainment"
+    : onPublishing
+      ? "6in1 Publishing"
+      : "6in1 Group";
+  const ctaClassName = onEntertainment
+    ? "mt-6 inline-flex items-center justify-center rounded-full bg-[#ffb400] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#e7a300]"
+    : onPublishing
+      ? "mt-6 inline-flex items-center justify-center rounded-full bg-[#864ef5] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#7745de]"
+      : "button-brand mt-6";
+
   return (
     <footer className=" bg-black!">
       <div className="bg-white! rounded-t-[2.25rem] w-full ">
-      <div className="mx-auto w-full max-w-[90%] px-4 py-16 sm:py-20">
+      <div className="mx-auto w-full max-w-[94%] px-3 py-16 sm:max-w-[90%] sm:px-4 sm:py-20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-5">
             <Link href="/" className="inline-flex">
               <Image
-                src="/logoGroup.png"
-                alt="6in1 Group"
+                src={footerLogoSrc}
+                alt={footerLogoAlt}
                 width={250}
                 height={72}
                 className="h-14 w-auto object-contain object-left"
@@ -21,7 +44,7 @@ export function SiteFooter() {
               Built for talent. Driven by vision. 6in1 Group advances entertainment and publishing through strategic
               growth, rights-focused operations, and long-term brand development.
             </p>
-            <Link href="/contact" className="button-brand mt-6">
+            <Link href="/contact" className={ctaClassName}>
               Get In Touch
             </Link>
           </div>

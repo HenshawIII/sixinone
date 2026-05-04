@@ -6,9 +6,9 @@ export function CompaniesFounderIntro() {
   return (
     <section className=" overflow-hidden bg-black!">
       <div className=" rounded-t-[2.25rem] bg-white! py-16 px-4">
-        <div className="relative mx-auto max-w-[90%]" data-reveal>
+        <div className="relative mx-auto max-w-[94%] sm:max-w-[90%]">
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-12 lg:items-center">
-            <div className="relative lg:col-span-5">
+            <div className="relative lg:col-span-5" data-reveal>
               <div
                 aria-hidden
                 className="pointer-events-none absolute -left-8 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-brand-purple/25 blur-3xl md:h-72 md:w-72"
@@ -24,7 +24,7 @@ export function CompaniesFounderIntro() {
                     className="object-cover"
                     fill
                     sizes="(max-width: 1024px) 100vw, 42vw"
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=80"
+                    src="/Founders.jpg"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-transparent" />
                 </div>
@@ -33,16 +33,21 @@ export function CompaniesFounderIntro() {
             </div>
 
             <div className="lg:col-span-7">
-              <p className="font-heading text-[0.7rem] uppercase tracking-[0.35em] text-site-muted sm:text-xs">Founder</p>
-              <h2 className="mt-3 font-heading text-3xl leading-[1.08] tracking-[0.02em] text-site-text sm:text-4xl lg:text-[2.65rem]">
+              <p className="font-heading text-[0.7rem] uppercase tracking-[0.35em] text-site-muted sm:text-xs" data-reveal-text>
+                Founder
+              </p>
+              <h2
+                className="mt-3 font-heading text-3xl leading-[1.08] tracking-[0.02em] text-site-text sm:text-4xl lg:text-[2.65rem]"
+                data-reveal-text
+              >
                 Abayomi Noah{" "}
                 <span className="text-brand-primary">Ogunmefun</span>
               </h2>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-site-muted sm:text-lg">
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-site-muted sm:text-lg" data-reveal-text>
                 6in1 Group was founded to unite entertainment and publishing under one disciplined growth engine—so talent,
                 catalogs, and partnerships move forward with clarity and commercial staying power.
               </p>
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-site-muted sm:text-lg">
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-site-muted sm:text-lg" data-reveal-text>
                 The vision is straightforward: protect creators, sharpen positioning, and open doors that compound—whether
                 on stage, on-field, or across rights and licensing globally.
               </p>
@@ -58,13 +63,15 @@ export function CompaniesFounderIntro() {
                 ))}
               </div> */}
 
-              <Link
-                className="group mt-10 inline-flex items-center gap-2 rounded-full bg-brand-primary px-6 py-3 text-sm font-semibold text-white shadow-[0_12px_32px_rgba(227,67,28,0.35)] transition hover:opacity-95"
-                href="/contact"
-              >
-                Contact 6in1 Group
-                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" aria-hidden />
-              </Link>
+              <div data-reveal-stagger className="mt-10">
+                <Link
+                  className="group inline-flex items-center gap-2 rounded-full bg-brand-primary px-6 py-3 text-sm font-semibold text-white shadow-[0_12px_32px_rgba(227,67,28,0.35)] transition hover:opacity-95"
+                  href="/contact"
+                >
+                  Contact 6in1 Group
+                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" aria-hidden />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

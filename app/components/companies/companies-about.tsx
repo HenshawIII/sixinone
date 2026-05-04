@@ -5,15 +5,23 @@ export function CompaniesAbout() {
   return (
     <section className="section-white bg-white!">
       <div className="section-wrap">
-        <div className="mx-auto max-w-[90%] space-y-10">
+        <div className="mx-auto max-w-[94%] space-y-10 sm:max-w-[90%]">
           <header className="mx-auto max-w-3xl text-center">
-            <h2 className="font-heading text-4xl uppercase tracking-[0.02em] text-site-text sm:text-5xl">About Us</h2>
-            <p className="mt-4 text-base leading-relaxed text-site-muted tracking-tight sm:text-lg">
+            <h2
+              className="font-heading text-4xl uppercase tracking-[0.02em] text-site-text sm:text-5xl"
+              data-reveal-text
+            >
+              About Us
+            </h2>
+            <p
+              className="mt-4 text-base leading-relaxed text-site-muted tracking-tight sm:text-lg"
+              data-reveal-text
+            >
               6in1 Group unites specialist companies that help creators turn momentum into durable careers. We combine
               development, strategy, and execution so talent and rights holders can grow with confidence.
             </p>
           </header>
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2" data-reveal-stagger>
             <article className="relative overflow-hidden rounded-2xl border border-black/10 bg-black/5 ">
               <div className="relative aspect-4/3 overflow-hidden rounded-xl">
                 <Image
@@ -37,7 +45,10 @@ export function CompaniesAbout() {
               </div>
             </article>
           </div>
-          <p className="mx-auto max-w-4xl text-center text-base tracking-tight leading-relaxed text-site-muted sm:text-lg">
+          <p
+            className="mx-auto max-w-4xl text-center text-base tracking-tight leading-relaxed text-site-muted sm:text-lg"
+            data-reveal-text
+          >
             Through Entertainment and Publishing, we provide the structure behind sustainable growth: sharper
             positioning, stronger partnerships, and long-term commercial value built around each creator&apos;s goals.
             Backed by deep industry experience, our teams deliver practical strategies that create visible impact for
@@ -46,7 +57,7 @@ export function CompaniesAbout() {
         </div>
       </div>
       <div className="border-t border-black/5 bg-white pt-10">
-        <div className="mx-auto max-w-[90%] space-y-8 px-4 pb-16">
+        <div className="mx-auto max-w-[94%] space-y-8 px-3 pb-16 sm:max-w-[90%] sm:px-4">
           <div className="grid gap-6 lg:grid-cols-2">
             <div data-reveal>
               <InfoCard

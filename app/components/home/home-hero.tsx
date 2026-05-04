@@ -29,9 +29,10 @@ export function HomeHero({ headline, supporting }: HomeHeroProps) {
         opacity: 1,
         y: 0,
         filter: "blur(0px)",
-        duration: 0.95,
+        duration: 1.0,
+        delay: 0.1,
         ease: "power3.out",
-        stagger: 0.14,
+        stagger: 0.12,
       }
     );
 

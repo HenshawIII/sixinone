@@ -24,14 +24,17 @@ export default function ContactPage() {
       />
 
       <section className="section-soft bg-black! pt-0">
-        <div data-reveal className="mx-auto w-full max-w-full overflow-hidden rounded-t-[2.25rem] bg-site-soft">
+        <div className="mx-auto w-full max-w-full overflow-hidden rounded-t-[2.25rem] bg-site-soft">
           <div className="section-wrap space-y-8">
-            <section data-reveal className="surface-card">
-              <h2 className="font-heading text-3xl text-site-text sm:text-4xl">Get in touch</h2>
-              <p className="mt-3 max-w-3xl text-site-muted">
-                Tell us what you are working on and the right team will follow up. We usually respond to priority enquiries quickly.
+            <section className="surface-card">
+              <h2 className="font-heading text-3xl text-site-text sm:text-4xl" data-reveal-text>
+                Get in touch
+              </h2>
+              <p className="mt-3 max-w-3xl text-site-muted" data-reveal-text>
+                Tell us what you are working on and the right team will follow up. We usually respond to priority enquiries
+                quickly.
               </p>
-              <div className="mt-6 grid gap-4 md:grid-cols-3">
+              <div className="mt-6 grid gap-4 md:grid-cols-3" data-reveal-stagger>
                 <article className="rounded-2xl border border-black/10 bg-white p-4">
                   <Mail className="h-5 w-5 text-brand-primary" />
                   <p className="mt-3 font-semibold text-site-text">Email</p>

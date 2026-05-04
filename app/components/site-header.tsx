@@ -55,7 +55,7 @@ export function SiteHeader() {
           : routeHeaderClass
       }`}
     >
-      <div className="mx-auto flex h-full w-full max-w-[90%] items-center justify-between gap-4 px-2">
+      <div className="mx-auto flex h-full w-full max-w-[94%] items-center justify-between gap-4 px-2 sm:max-w-[90%]">
         <Link
           href="/"
           className="relative flex shrink-0 items-center"

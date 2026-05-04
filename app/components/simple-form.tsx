@@ -8,6 +8,7 @@ type SimpleFormProps = {
   buttonText: string;
   fields?: Array<{ name: string; label: string; type?: string; multiline?: boolean }>;
   dark?: boolean;
+  buttonClassName?: string;
 };
 
 export function SimpleForm({
@@ -16,6 +17,7 @@ export function SimpleForm({
   buttonText,
   fields = [{ name: "email", label: "Email", type: "email" }],
   dark,
+  buttonClassName,
 }: SimpleFormProps) {
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
@@ -74,7 +76,7 @@ export function SimpleForm({
             )}
           </label>
         ))}
-        <button className="button-brand w-full sm:w-auto" disabled={loading} type="submit">
+        <button className={`${buttonClassName ?? "button-brand"} w-full sm:w-auto`} disabled={loading} type="submit">
           {loading ? "Submitting..." : buttonText}
         </button>
         {done ? <p className="text-sm text-brand-blue">Thanks. We received your details.</p> : null}

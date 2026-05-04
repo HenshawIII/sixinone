@@ -22,14 +22,16 @@ export default function PublishingPage() {
         }
       />
       <section className="section-soft bg-[#68456E]! pt-0">
-        <div data-reveal className="mx-auto w-full max-w-full overflow-hidden rounded-t-[2.25rem] bg-site-soft">
+        <div className="mx-auto w-full max-w-full overflow-hidden rounded-t-[2.25rem] bg-site-soft">
           <div className="section-wrap space-y-10">
-            <section data-reveal className="surface-card">
-              <h3 className="font-heading text-2xl text-site-text">Co-Publishing</h3>
-              <p className="mt-3 text-site-muted">
+            <section className="surface-card">
+              <h3 className="font-heading text-2xl text-site-text" data-reveal-text>
+                Co-Publishing
+              </h3>
+              <p className="mt-3 text-site-muted" data-reveal-text>
                 Represented authors, songwriters, and composers.
               </p>
-              <div className="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-3" data-reveal-stagger>
                 {publishingContributors.map((contributor) => (
                   <article key={contributor.name} className="rounded-2xl border border-black/10 p-4">
                     <p className="font-semibold text-site-text">{contributor.name}</p>
@@ -49,9 +51,13 @@ export default function PublishingPage() {
       </section>
       <section className="section-soft pt-0">
         <div className="section-wrap space-y-10">
-          <section data-reveal>
-            <h3 className="mb-4 font-heading text-2xl text-site-text">Music Licensing</h3>
-            <LicensingTabs items={licensingTabs} accent="purple" variant="modern" />
+          <section>
+            <h3 className="mb-4 font-heading text-2xl text-site-text" data-reveal-text>
+              Music Licensing
+            </h3>
+            <div data-reveal>
+              <LicensingTabs items={licensingTabs} accent="purple" variant="modern" />
+            </div>
           </section>
         </div>
       </section>
