@@ -1,9 +1,23 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { LicensingTabs } from "../components/licensing-tabs";
 import { PageHeroBand } from "../components/page-hero-band";
 import { PageReveal } from "../components/page-reveal";
 import { SiteCta } from "../components/site-cta";
 import { licensingTabs, publishingContributors } from "../lib/site-data";
+
+export const metadata: Metadata = {
+  title: "Publishing",
+  description:
+    "6in1 Publishing offers co-publishing, rights structure, licensing, and catalog strategy for songwriters, composers, and rights holders.",
+  alternates: { canonical: "/publishing" },
+  openGraph: {
+    title: "Publishing | 6in1 Group",
+    description:
+      "6in1 Publishing offers co-publishing, rights structure, licensing, and catalog strategy for songwriters, composers, and rights holders.",
+    url: "/publishing",
+  },
+};
 
 export default function PublishingPage() {
   return (

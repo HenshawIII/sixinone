@@ -1,8 +1,22 @@
+import type { Metadata } from "next";
 import { Mail, MessageSquareMore, UsersRound } from "lucide-react";
 import { PageHeroBand } from "../components/page-hero-band";
 import { PageReveal } from "../components/page-reveal";
 import { SiteCta } from "../components/site-cta";
 import { SimpleForm } from "../components/simple-form";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Contact 6in1 Group for talent representation, publishing support, licensing, media, and strategic partnerships across Lagos, London, and Toronto.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact | 6in1 Group",
+    description:
+      "Contact 6in1 Group for talent representation, publishing support, licensing, media, and strategic partnerships across Lagos, London, and Toronto.",
+    url: "/contact",
+  },
+};
 
 const contactTopics = [
   "General enquiries",

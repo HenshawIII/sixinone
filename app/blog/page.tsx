@@ -1,9 +1,23 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeroBand } from "../components/page-hero-band";
 import { PageReveal } from "../components/page-reveal";
 import { SiteCta } from "../components/site-cta";
 import { SimpleForm } from "../components/simple-form";
 import { blogPosts } from "../lib/site-data";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "Read company updates and industry perspective from 6in1 Group across entertainment, publishing, rights, and roster growth.",
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "Blog | 6in1 Group",
+    description:
+      "Read company updates and industry perspective from 6in1 Group across entertainment, publishing, rights, and roster growth.",
+    url: "/blog",
+  },
+};
 
 export default function BlogPage() {
   return (

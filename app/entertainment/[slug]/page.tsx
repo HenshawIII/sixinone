@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -34,6 +35,34 @@ function getMediaIconMeta(platform: string) {
 
 export function generateStaticParams() {
   return allTalent.map((talent) => ({ slug: talent.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
+  const { slug } = await params;
+  const talent = allTalent.find((item) => item.slug === slug);
+  if (!talent) {
+    return { title: "Talent" };
+  }
+  const image = getTalentImage(talent.slug, talent.name, talent.kind);
+  const label = talent.kind === "musician" ? "Artist" : "Athlete";
+  return {
+    title: talent.name,
+    description: talent.bio,
+    alternates: { canonical: `/entertainment/${talent.slug}` },
+    openGraph: {
+      title: `${talent.name} | 6in1 Group`,
+      description: talent.bio,
+      url: `/entertainment/${talent.slug}`,
+      images: [{ url: image.src, alt: image.alt }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${talent.name} | 6in1 Group`,
+      description: talent.bio,
+      images: [image.src],
+    },
+    keywords: [talent.name, "6in1 Group", "6in1 Entertainment", label.toLowerCase()],
+  };
 }
 
 export default async function TalentProfilePage({
