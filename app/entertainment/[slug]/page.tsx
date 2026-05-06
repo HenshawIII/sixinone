@@ -74,6 +74,7 @@ export default async function TalentProfilePage({
   const talent = allTalent.find((item) => item.slug === slug);
   if (!talent) notFound();
   const image = getTalentImage(talent.slug, talent.name, talent.kind);
+  const isAthlete = talent.kind === "athlete";
 
   return (
     <>
@@ -92,8 +93,15 @@ export default async function TalentProfilePage({
         <div className="mx-auto w-full max-w-full overflow-hidden rounded-t-[2.25rem] bg-site-soft">
           <div className="section-wrap space-y-8">
             <div data-reveal className="relative overflow-hidden rounded-2xl border border-black/10 bg-black/5">
-              <div className="relative aspect-16/7 min-h-[220px]">
-                <Image alt={image.alt} className="object-cover" fill priority sizes="(max-width: 1024px) 100vw, 1200px" src={image.src} />
+              <div className={`relative min-h-[220px] ${isAthlete ? "aspect-4/5 sm:aspect-5/4 lg:aspect-video" : "aspect-16/7"}`}>
+                <Image
+                  alt={image.alt}
+                  className={isAthlete ? "object-contain object-center" : "object-cover"}
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 1200px"
+                  src={image.src}
+                />
               </div>
               <div aria-hidden className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/45 via-black/5 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">

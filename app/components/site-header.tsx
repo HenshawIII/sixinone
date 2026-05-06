@@ -29,13 +29,7 @@ export function SiteHeader() {
   const onPublishing = pathname.startsWith("/publishing");
   const useTransparentHeader = onHome && !scrolled;
   const useLightChrome = useTransparentHeader && !drawerOpen;
-  const brandLogoSrc = useLightChrome
-    ? "/logoWhite.png"
-    : onEntertainment
-      ? "/logoEnt.png"
-      : onPublishing
-        ? "/logoPub.png"
-        : "/logoWhite.png";
+  const brandLogoSrc = onEntertainment ? "/iconBlack.png" : "/iconWhite.png";
   const brandLogoAlt = onEntertainment
     ? "6in1 Entertainment"
     : onPublishing
