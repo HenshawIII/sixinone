@@ -55,7 +55,6 @@ export function SiteFooter() {
               links={[
                 { href: "/", label: "Home" },
                 { href: "/about", label: "About" },
-                { href: "/companies", label: "Companies" },
                 { href: "/blog", label: "Blog" },
               ]}
             />

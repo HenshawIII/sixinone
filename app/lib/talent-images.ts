@@ -7,15 +7,15 @@ type TalentImage = {
 
 const TALENT_IMAGE_MAP: Record<string, TalentImage> = {
   vector: {
-    src: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1400&q=80",
+    src: "/vecii.webp",
     alt: "Music artist performing under stage lights",
   },
   pdstrn: {
-    src: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1400&q=80",
+    src: "/PDSTRN.webp",
     alt: "Singer recording with a studio microphone",
   },
   "bigbird-kuti": {
-    src: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1400&q=80",
+    src: "/seunii.webp",
     alt: "Afrobeat performer with energetic crowd",
   },
   eld3r: {

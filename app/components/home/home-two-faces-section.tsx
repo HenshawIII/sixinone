@@ -5,11 +5,11 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 const sliderImages = [
-  { src: "https://picsum.photos/seed/six1/1280/860", alt: "Creative team planning session" },
-  { src: "https://picsum.photos/seed/six2/1280/860", alt: "Studio production setup" },
-  { src: "https://picsum.photos/seed/six3/1280/860", alt: "Artist performance spotlight" },
-  { src: "https://picsum.photos/seed/six4/1280/860", alt: "Publishing and strategy meeting" },
-  { src: "https://picsum.photos/seed/six5/1280/860", alt: "Brand collaboration campaign" },
+  { src: "/veci.jpeg", alt: "Vector performing" },
+  { src: "/boxers.jpg", alt: "Boxer performing" },
+  { src: "/artists.jpg", alt: "Artists performing" },
+  { src: "/seun.webp", alt: "Seun Kuti performing" },
+  { src: "/boxii.jpg", alt: "Boxers performing" },
 ];
 
 export function HomeTwoFacesSection() {

@@ -48,7 +48,7 @@ export function SiteCta({
             </div>
 
             <div className="relative justify-self-start md:justify-self-end">
-              <div className="rounded-3xl border border-white/20 bg-white/6 p-5 backdrop-blur-sm sm:p-6">
+              {/* <div className="rounded-3xl border border-white/20 bg-white/6 p-5 backdrop-blur-sm sm:p-6">
                 <Image
                   alt="6in1 Group brand logo"
                   height={110}
@@ -56,7 +56,7 @@ export function SiteCta({
                   width={320}
                   className="h-16 w-auto object-contain sm:h-20"
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
