@@ -2,7 +2,7 @@
 
 import gsap from "gsap";
 import Link from "next/link";
-import { useId, useLayoutEffect, useRef } from "react";
+import { useId, useLayoutEffect, useRef, useState } from "react";
 
 type HomeHeroProps = {
   headline: string;
@@ -13,6 +13,7 @@ export function HomeHero({ headline, supporting }: HomeHeroProps) {
   const ringRef = useRef<HTMLDivElement>(null);
   const heroTextRef = useRef<HTMLDivElement>(null);
   const ringPathId = `${useId().replace(/:/g, "")}-hero-ring`;
+  const [isVideoReady, setIsVideoReady] = useState(false);
 
   useLayoutEffect(() => {
     const ring = ringRef.current;
@@ -54,12 +55,14 @@ export function HomeHero({ headline, supporting }: HomeHeroProps) {
       <video
         aria-hidden
         autoPlay
-        className="absolute inset-0 h-full w-full object-cover"
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${isVideoReady ? "opacity-100" : "opacity-0"}`}
         loop
         muted
+        onCanPlayThrough={() => setIsVideoReady(true)}
         playsInline
       >
-        <source src="/mic6in.mp4" type="video/mp4" />
+        <source media="(max-width: 767px)" src="https://ik.imagekit.io/ttibelkqm/Portfolio/6in1/6in1heromob.mp4" type="video/mp4" />
+        <source media="(min-width: 768px)" src="https://ik.imagekit.io/ttibelkqm/Portfolio/6in1/6in1herovid.mp4" type="video/mp4" />
       </video>
       <div aria-hidden className="absolute inset-0 bg-black/55" />
 
