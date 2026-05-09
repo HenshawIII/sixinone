@@ -4,6 +4,11 @@ import gsap from "gsap";
 import Link from "next/link";
 import { useId, useLayoutEffect, useRef, useState } from "react";
 
+const HERO_VIDEO_MOBILE =
+  "https://ik.imagekit.io/ttibelkqm/Portfolio/6in1/6in1heromob.mp4";
+const HERO_VIDEO_DESKTOP =
+  "https://ik.imagekit.io/ttibelkqm/Portfolio/6in1/6in1herovid.mp4";
+
 type HomeHeroProps = {
   headline: string;
   supporting: string;
@@ -12,8 +17,10 @@ type HomeHeroProps = {
 export function HomeHero({ headline, supporting }: HomeHeroProps) {
   const ringRef = useRef<HTMLDivElement>(null);
   const heroTextRef = useRef<HTMLDivElement>(null);
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
   const ringPathId = `${useId().replace(/:/g, "")}-hero-ring`;
   const [isVideoReady, setIsVideoReady] = useState(false);
+  const [heroVideoSrc, setHeroVideoSrc] = useState<string | undefined>(undefined);
 
   useLayoutEffect(() => {
     const ring = ringRef.current;
@@ -50,20 +57,55 @@ export function HomeHero({ headline, supporting }: HomeHeroProps) {
     };
   }, []);
 
+  useLayoutEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const syncSrc = () => {
+      setHeroVideoSrc(mq.matches ? HERO_VIDEO_MOBILE : HERO_VIDEO_DESKTOP);
+    };
+    syncSrc();
+    mq.addEventListener("change", syncSrc);
+    return () => mq.removeEventListener("change", syncSrc);
+  }, []);
+
+  useLayoutEffect(() => {
+    if (heroVideoSrc === undefined) return;
+    setIsVideoReady(false);
+  }, [heroVideoSrc]);
+
+  useLayoutEffect(() => {
+    const video = heroVideoRef.current;
+    if (!video || heroVideoSrc === undefined) return;
+    video.muted = true;
+    const tryPlay = () => {
+      void video.play().catch(() => {});
+    };
+    tryPlay();
+    video.addEventListener("loadeddata", tryPlay, { once: true });
+    return () => video.removeEventListener("loadeddata", tryPlay);
+  }, [heroVideoSrc]);
+
+  const revealVideo = () => setIsVideoReady(true);
+
   return (
     <section className="relative isolate -mt-20 min-h-[110svh] w-full overflow-hidden bg-black text-white sm:min-h-[120svh]">
-      <video
-        aria-hidden
-        autoPlay
-        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${isVideoReady ? "opacity-100" : "opacity-0"}`}
-        loop
-        muted
-        onCanPlayThrough={() => setIsVideoReady(true)}
-        playsInline
-      >
-        <source media="(max-width: 767px)" src="https://ik.imagekit.io/ttibelkqm/Portfolio/6in1/6in1heromob.mp4" type="video/mp4" />
-        <source media="(min-width: 768px)" src="https://ik.imagekit.io/ttibelkqm/Portfolio/6in1/6in1herovid.mp4" type="video/mp4" />
-      </video>
+      {heroVideoSrc ? (
+        <video
+          ref={heroVideoRef}
+          key={heroVideoSrc}
+          aria-hidden
+          autoPlay
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${isVideoReady ? "opacity-100" : "opacity-0"}`}
+          loop
+          muted
+          playsInline
+          preload="auto"
+          src={heroVideoSrc}
+          onCanPlay={revealVideo}
+          onCanPlayThrough={revealVideo}
+          onLoadedData={revealVideo}
+          onPlaying={revealVideo}
+        />
+      ) : null}
       <div aria-hidden className="absolute inset-0 bg-black/55" />
 
       <div ref={heroTextRef} className="relative z-10 mx-auto flex min-h-[110svh] w-full max-w-6xl flex-col justify-end px-6 pb-8 text-center sm:min-h-[120svh] sm:px-10 sm:pb-12 lg:pb-16">

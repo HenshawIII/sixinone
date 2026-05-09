@@ -21,13 +21,10 @@ export function EntertainmentRosterTabs({
     <section className=" bg-black!">
       <div className="s space-y-8 bg-white! w-full rounded-t-[2.25rem] py-16 px-4 sm:px-6 sm:py-20">
         <header className="mx-auto max-w-3xl text-center">
-          <h2
-            className="font-heading text-4xl uppercase tracking-[0.02em] text-site-text sm:text-5xl"
-            data-reveal-text
-          >
+          <h2 className="font-heading text-4xl uppercase tracking-[0.02em] text-site-text sm:text-5xl">
             Our Entertainment Roster
           </h2>
-          <p className="mt-4 text-base tracking-tight text-site-muted sm:text-lg" data-reveal-text>
+          <p className="mt-4 text-base tracking-tight text-site-muted sm:text-lg">
             Discover artists and athletes at a glance. Switch tabs to view either roster instantly without scrolling.
           </p>
         </header>
@@ -72,7 +69,6 @@ export function EntertainmentRosterTabs({
               id="panel-artists"
               aria-labelledby="tab-artists"
               className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3"
-              data-reveal-stagger
             >
               {musicians.map((artist) => {
                 const image = getTalentImage(artist.slug, artist.name, artist.kind);
@@ -99,7 +95,6 @@ export function EntertainmentRosterTabs({
               id="panel-athletes"
               aria-labelledby="tab-athletes"
               className="mt-6 grid gap-5 md:grid-cols-2"
-              data-reveal-stagger
             >
               {athletes.map((athlete) => {
                 const image = getTalentImage(athlete.slug, athlete.name, athlete.kind);
