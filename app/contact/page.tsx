@@ -8,12 +8,12 @@ import { SimpleForm } from "../components/simple-form";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact 6in1 Group for talent representation, publishing support, licensing, media, and strategic partnerships across Lagos, London, and Toronto.",
+    "Contact SIX-IN-ONE Group for talent representation, publishing support, licensing, media, and strategic partnerships across Lagos, London, and Toronto.",
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact | 6in1 Group",
+    title: "Contact | SIX-IN-ONE Group",
     description:
-      "Contact 6in1 Group for talent representation, publishing support, licensing, media, and strategic partnerships across Lagos, London, and Toronto.",
+      "Contact SIX-IN-ONE Group for talent representation, publishing support, licensing, media, and strategic partnerships across Lagos, London, and Toronto.",
     url: "/contact",
   },
 };
@@ -31,7 +31,7 @@ export default function ContactPage() {
       <PageReveal />
       <PageHeroBand
         eyebrow="Contact"
-        title="Talk to the 6in1 team."
+        title="Talk to the SIX-IN-ONE team."
         description="Reach out for representation, publishing support, licensing opportunities, and strategic partnerships."
         backgroundImage="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=80"
         overlayClassName="bg-black/60"
@@ -76,7 +76,7 @@ export default function ContactPage() {
 
             <div data-reveal>
               <SimpleForm
-                title="Contact 6in1 Group"
+                title="Contact SIX-IN-ONE Group"
                 helper="Share your details and a short message. We will route it to the right team."
                 buttonText="Send Message"
                 fields={[
@@ -91,7 +91,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <SiteCta title="Ready to build with 6in1 Group?" buttonHref="/contact" />
+      <SiteCta title="Ready to build with SIX-IN-ONE Group?" buttonHref="/contact" />
     </>
   );
 }

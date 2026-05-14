@@ -50,18 +50,18 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     description: talent.bio,
     alternates: { canonical: `/entertainment/${talent.slug}` },
     openGraph: {
-      title: `${talent.name} | 6in1 Group`,
+      title: `${talent.name} | SIX-IN-ONE Group`,
       description: talent.bio,
       url: `/entertainment/${talent.slug}`,
       images: [{ url: image.src, alt: image.alt }],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${talent.name} | 6in1 Group`,
+      title: `${talent.name} | SIX-IN-ONE Group`,
       description: talent.bio,
       images: [image.src],
     },
-    keywords: [talent.name, "6in1 Group", "6in1 Entertainment", label.toLowerCase()],
+    keywords: [talent.name, "SIX-IN-ONE Group", "SIX-IN-ONE Entertainment", label.toLowerCase()],
   };
 }
 
@@ -115,6 +115,23 @@ export default async function TalentProfilePage({
               <p className="text-sm text-site-muted">Identity</p>
               <p className="font-heading text-xl text-site-text">{talent.identity}</p>
             </div>
+            {talent.kind === "musician" && talent.slug === "vector" ? (
+              <section data-reveal className="surface-card">
+                <h3 className="font-heading text-2xl text-site-text" data-reveal-text>
+                  Label services and catalog
+                </h3>
+                <p className="mt-3 text-site-muted">
+                  A detailed label-services release timeline—including GRAP Entertainment milestones and Muso.ai credit
+                  index—is maintained on our Independent artists page as part of SIX-IN-ONE Entertainment.
+                </p>
+                <Link
+                  href="/entertainment/independent-artists#vector"
+                  className="mt-4 inline-flex items-center justify-center rounded-full border border-[#ffb400]/55 px-5 py-3 text-sm font-semibold text-site-text transition hover:border-[#ffb400] hover:bg-[#ffb400] hover:text-white"
+                >
+                  View label-services timeline
+                </Link>
+              </section>
+            ) : null}
           </div>
         </div>
       </section>

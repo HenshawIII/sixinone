@@ -8,12 +8,12 @@ import { SiteCta } from "../components/site-cta";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn how 6in1 Group unites entertainment and publishing to help creators build durable careers and long-term commercial value.",
+    "Learn how SIX-IN-ONE Group unites entertainment and publishing to help creators build durable careers and long-term commercial value.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About | 6in1 Group",
+    title: "About | SIX-IN-ONE Group",
     description:
-      "Learn how 6in1 Group unites entertainment and publishing to help creators build durable careers and long-term commercial value.",
+      "Learn how SIX-IN-ONE Group unites entertainment and publishing to help creators build durable careers and long-term commercial value.",
     url: "/about",
   },
 };

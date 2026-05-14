@@ -34,9 +34,11 @@ export type TalentProfile = MusicianProfile | AthleteProfile;
 export const homeCopy = {
   headline: "Built for Talent. Driven by Vision.",
   supporting:
-    "6in1 Group is a talent, image, and brand development company working across entertainment, publishing, and cultural business development.",
+    "SIX-IN-ONE Group is a talent, image, and brand development company working across entertainment, publishing, and cultural business development.",
+  watchword:
+    "The watchword is — artistry development, Image/likeness creation, and brand establishment for the artist.",
   about:
-    "6in1 Group is a forward-facing talent and brand development company operating at the intersection of entertainment, publishing, and strategic growth.",
+    "SIX-IN-ONE Group is a forward-facing talent and brand development company operating at the intersection of entertainment, publishing, and strategic growth.",
 };
 
 export const musicians: MusicianProfile[] = [
@@ -45,7 +47,7 @@ export const musicians: MusicianProfile[] = [
     slug: "vector",
     name: "Vector",
     identity: "Rapper / Songwriter",
-    bio: "Vector is a Nigerian hip-hop artist known for lyrical precision, storytelling, and performance-led releases.",
+    bio: `Olanrewaju David Ogunmefun, known as Vector Tha Viper, was born on August 7, 1984, in Lagos, Nigeria. A Philosophy graduate of the University of Lagos, he is one of Nigerian hip-hop's premier lyricists and a two-time Headies "Lyricist on the Roll" winner. He pioneered "Rapfrobeat," fusing Afrobeat instrumentation with hip-hop lyricism. His catalog spans five studio albums — State of Surprise (2010), The Second Coming (2012), Lafíaji (2016), Teslìm: The Energy Still Lives in Me (2022), and Teslim: A Lover Boy PTSD (2024) — featuring collaborations with 2Face Idibia, Davido, Wande Coal, Nasty C, and Seun Kuti. His rivalry and subsequent reconciliation with M.I Abaga remain the most celebrated feud in Nigerian rap history. He holds the African record for the longest freestyle rap, at approximately 2 hours and 30 minutes. Brand partners include Sprite, Hennessy Nigeria, and Red Bull. Vector remains one of the most enduring voices in African hip-hop.`,
     discography: [
       { title: "Spotify Profile", link: "https://open.spotify.com/artist/2dIFhJ8RkRS2rXeDefY3t1" },
       { title: "Apple Music Profile", link: "https://music.apple.com/us/artist/vector/1189665450" },
@@ -72,7 +74,7 @@ export const musicians: MusicianProfile[] = [
     slug: "pdstrn",
     name: "PDSTRN",
     identity: "Artist / Songwriter",
-    bio: "PDSTRN blends contemporary African sounds with melodic songwriting and performance-driven releases.",
+    bio: `Bennett Abraham Obeya (born July 27, 1999), professionally known as PDSTRN (pron. pedestrian), is a rapper, singer, songwriter, and style icon born in Lagos, Nigeria, and raised between Lagos and Toronto, Canada. He began writing and performing in his preteens. He announced himself to the world with his debut song "TOXIC," featured on WeTalkSound's critically acclaimed compilation album LOFN, which hit #1 on the Apple Music Alternative Charts in Nigeria in 2020. His debut EP, Rock, Paper, Scissors, accumulated over 2.2 million streams in 2024. Drawing influence from J. Cole, Drake, Olamide, and Tyler, the Creator, PDSTRN crafted a sound entirely his own — a seamless fusion of rap and melody delivered through a coarse baritone voice, weaving narratives of street life, luxury, and resilience across hip-hop and afrobeats with equal authority.`,
     discography: [
       { title: "Spotify Profile", link: "https://open.spotify.com/artist/7oAl5VKsXmNAcXuyKA5sSv" },
       { title: "Apple Music Profile", link: "https://music.apple.com/us/artist/pdstrn/1635664140" },
@@ -97,9 +99,9 @@ export const musicians: MusicianProfile[] = [
   {
     kind: "musician",
     slug: "bigbird-kuti",
-    name: "Bigbird Kuti",
+    name: "BIGBIRD Kuti",
     identity: "Afrobeat Artist",
-    bio: "Bigbird Kuti carries forward Afrobeat influence with contemporary vocal styling and energetic live delivery.",
+    bio: "BIGBIRD Kuti carries forward Afrobeat influence with contemporary vocal styling and energetic live delivery.",
     discography: [
       { title: "Spotify Profile", link: "https://open.spotify.com/artist/7n7wewebGwzL1Yz8yxdz4M" },
       { title: "Apple Music Profile", link: "https://music.apple.com/us/artist/bigbird-kuti/1818566485" },
@@ -204,7 +206,7 @@ export const musicians: MusicianProfile[] = [
     slug: "maxino",
     name: "Maxino",
     identity: "Artist / Performer",
-    bio: "Maxino builds rhythmic, performance-first releases shaped for digital discovery and live audience pull.",
+    bio: `Talented Nigerian rapper and songwriter, real name Ezaza Maxino, better known by his stage name Maxino, born 4th July. He started at 10, inspired by his parents' love of music and diverse genres. Maxino was a singer and dancer, and in 2004, he joined a crew with whom he created music. He recorded his first studio single, "Little Light Of Mine," produced by Frankie Free, in 2006; next were "I Want More feat. Erigga" and "Copy & Paste," which became an anthem of the street at the time. Maxino graduated in 2015 with a BSc degree in Computer Science from Benson Idahosa University (BIU), Edo State, and also holds an OND from Ahmadu Bello University, Zaria. After school, the rapper moved to Lagos to pursue music full-time. He is a big fan of hip-hop, and his mentors included 50 Cent, The Game, Nas, and other rappers featured in Rap Life. Maxino's goal in making music is to educate the street and feed their souls with sounds and lyrics to nourish them. He says the street is his motivation, and hip-hop is in safe hands with him.`,
     discography: [
       { title: "Spotify Profile", link: "https://open.spotify.com/artist/6LTAaKONuHKKWR8ljjIbCA" },
       { title: "Apple Music Profile", link: "https://music.apple.com/us/artist/maxino/996564407" },
@@ -256,9 +258,9 @@ export const athletes: AthleteProfile[] = [
   {
     kind: "athlete",
     slug: "ezekiel-touch",
-    name: "Ezekiel TOUCH",
+    name: "Seun Ezekiel (TOUCH)",
     identity: "Professional Boxer",
-    bio: "Ezekiel TOUCH is a super-bantamweight boxer focused on disciplined preparation and high-intensity ring execution.",
+    bio: "Seun Ezekiel (TOUCH) is a super-bantamweight boxer focused on disciplined preparation and high-intensity ring execution.",
     height: "5'8\"",
     weightCategory: "Super-bantam",
     record: "3/0/2",
@@ -299,54 +301,29 @@ export const athletes: AthleteProfile[] = [
 
 export const allTalent: TalentProfile[] = [...musicians, ...athletes];
 
-export const publishingContributors = [
+export type PublishingContributor = {
+  name: string;
+  role: string;
+  ipi: string;
+  pro: string;
+  publisher?: string;
+  works?: string[];
+  copyrightYear?: string;
+};
+
+export const publishingContributors: PublishingContributor[] = [
   {
-    name: "Bennett Abraham Obeya",
-    role: "Songwriter / Composer",
-    works: ["Catalog in development", "Rights-managed compositions"],
-    ipi: "Pending",
-    pro: "Pending",
-    copyrightYear: "2026",
-  },
-  {
-    name: "Bolon Scridge",
-    role: "Writer / Composer",
-    works: ["Catalog in development", "Rights-managed compositions"],
-    ipi: "Pending",
-    pro: "Pending",
-    copyrightYear: "2026",
-  },
-  {
-    name: "Ajayi Oluwalayomi Timothy",
-    role: "Writer / Composer",
-    works: ["Catalog in development", "Rights-managed compositions"],
-    ipi: "Pending",
-    pro: "Pending",
-    copyrightYear: "2026",
-  },
-  {
-    name: "Arinze Oruchie",
-    role: "Writer / Composer",
-    works: ["Catalog in development", "Rights-managed compositions"],
-    ipi: "Pending",
-    pro: "Pending",
-    copyrightYear: "2026",
-  },
-  {
-    name: "Ogunmefun David Olanrewaju",
-    role: "Writer / Composer",
-    works: ["Catalog in development", "Rights-managed compositions"],
-    ipi: "Pending",
-    pro: "Pending",
-    copyrightYear: "2026",
+    name: "Olanrewaju David Ogunmefun",
+    role: "Author / Composer",
+    ipi: "846101752",
+    pro: "PRS",
+    publisher: "Sony Music Publishing",
   },
   {
     name: "Marayesa Olayemi Stephen",
-    role: "Writer / Composer",
-    works: ["Catalog in development", "Rights-managed compositions"],
-    ipi: "Pending",
-    pro: "Pending",
-    copyrightYear: "2026",
+    role: "Composer",
+    ipi: "",
+    pro: "ASCAP",
   },
 ];
 
@@ -361,7 +338,7 @@ export const licensingTabs = [
 
 export const blogPosts = [
   {
-    title: "6in1 Group Expands Artist Development Tracks",
+    title: "SIX-IN-ONE Group Expands Artist Development Tracks",
     category: "Company Update",
     excerpt: "A new framework supports artist branding, release planning, and performance strategy.",
     date: "Apr 2026",

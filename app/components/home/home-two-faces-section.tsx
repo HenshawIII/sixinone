@@ -1,8 +1,9 @@
 "use client";
 
-import { Clock3, Music2, Trophy, UsersRound, MusicIcon, SportShoe } from "lucide-react";
+import { Clock3, Music2, UsersRound, MusicIcon, SportShoe } from "lucide-react";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { homeCopy } from "../../lib/site-data";
 
 const sliderImages = [
   { src: "/veci.jpeg", alt: "Vector performing" },
@@ -29,15 +30,19 @@ export function HomeTwoFacesSection() {
               className="max-w-5xl font-heading text-3xl leading-[1.1] text-site-text sm:text-4xl lg:text-5xl"
               data-reveal-text
             >
-              We are one brand with two faces: <span>Entertainment</span> and{" "}
-              <span className="text-site-muted">Publishing</span>.
+              We are one brand with Multiple faces.
             </h2>
+            <p
+              className="mt-4 max-w-3xl font-body text-base leading-relaxed text-site-text sm:text-lg"
+              data-reveal-text
+            >
+              {homeCopy.watchword}
+            </p>
             <p
               className="mt-4 max-w-3xl font-body text-base leading-relaxed text-site-muted sm:text-lg"
               data-reveal-text
             >
-              6in1 Group is a forward-facing talent and brand development company operating at the intersection of
-              entertainment, publishing, and strategic growth.
+              {homeCopy.supporting}
             </p>
             <div className="mt-8 flex flex-wrap gap-3" data-reveal-stagger>
               <Link className="button-brand" href="/about">
@@ -47,7 +52,7 @@ export function HomeTwoFacesSection() {
           </div>
         </div>
 
-        <div data-reveal className="relative left-1/2 w-screen -translate-x-1/2 pb-6 md:pb-8">
+        <div data-reveal className="relative w-full pb-6 md:pb-8">
           <div className="w-full overflow-hidden">
             <div className="home-image-slider-track flex flex-nowrap items-stretch gap-5">
               {[...sliderImages, ...sliderImages].map((image, index) => (
@@ -62,13 +67,22 @@ export function HomeTwoFacesSection() {
           </div>
         </div>
 
-        <div data-reveal-stagger className="grid  max-w-[94%] mx-auto py-10 sm:max-w-[90%] sm:grid-cols-2 lg:grid-cols-4">
+        <div
+          data-reveal-stagger
+          className="mx-auto grid max-w-[94%] grid-cols-2 gap-y-10 py-10 sm:max-w-[90%] sm:grid-cols-3 lg:grid-cols-4"
+        >
           <StatItem
+            icon={<Music2 className="h-8 w-8" strokeWidth={1.8} />}
+            value="570M+"
+            title="Career streams"
+            description="570+ million career streams across the company's milestones and roster."
+          />
+          {/* <StatItem
             icon={<UsersRound className="h-8 w-8" strokeWidth={1.8} />}
             value="2.5M+"
             title="Fans"
             description="Engaged fans across entertainment and publishing ecosystems."
-          />
+          /> */}
           <StatItem
             icon={<Clock3 className="h-8 w-8" strokeWidth={1.8} />}
             value="10+"

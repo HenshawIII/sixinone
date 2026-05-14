@@ -1,29 +1,47 @@
 "use client";
 
 import Link from "next/link";
-import { X } from "lucide-react";
-import { useEffect, useId } from "react";
+import { ChevronDown, X } from "lucide-react";
+import { useEffect, useId, useState } from "react";
 import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
 import { useMounted } from "./use-mounted";
 
 type NavItem = { readonly href: string; readonly label: string };
 
+const ENTERTAINMENT_HREF = "/entertainment";
+
 type SiteNavDrawerProps = {
   open: boolean;
   onClose: () => void;
   items: readonly NavItem[];
+  /** Sublinks for Entertainment (Overview, Live events, …). Shown in an expandable row under Entertainment. */
+  entertainmentSubnav?: readonly NavItem[];
 };
 
-export function SiteNavDrawer({ open, onClose, items }: SiteNavDrawerProps) {
+export function SiteNavDrawer({ open, onClose, items, entertainmentSubnav }: SiteNavDrawerProps) {
   const mounted = useMounted();
   const pathname = usePathname();
+  const entertainmentSubId = useId().replace(/:/g, "");
   const sidebarRingId = `${useId().replace(/:/g, "")}-drawer-ring`;
   const navHoverClass = pathname.startsWith("/entertainment")
     ? "hover:text-[#ffb400]"
     : pathname.startsWith("/publishing")
       ? "hover:text-[#864ef5]"
       : "hover:text-brand-red";
+
+  const hasEntertainmentAccordion =
+    Boolean(entertainmentSubnav?.length) && items.some((i) => i.href === ENTERTAINMENT_HREF);
+
+  const [entertainmentExpanded, setEntertainmentExpanded] = useState(() =>
+    pathname.startsWith(ENTERTAINMENT_HREF)
+  );
+
+  useEffect(() => {
+    if (pathname.startsWith(ENTERTAINMENT_HREF)) {
+      setEntertainmentExpanded(true);
+    }
+  }, [pathname]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -62,26 +80,83 @@ export function SiteNavDrawer({ open, onClose, items }: SiteNavDrawerProps) {
         <div className="flex items-center justify-between border-b border-white/30 px-6 py-5">
           <button
             aria-label="Close menu"
-            className="flex h-10 w-10 items-center justify-center rounded-full  text-brand-primary transition hover:bg-brand-primary/15"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-brand-primary transition hover:bg-brand-primary/15"
             onClick={onClose}
             type="button"
           >
             <X className="h-10 w-10 text-white" strokeWidth={2.2} />
           </button>
         </div>
-        <nav className="flex-1 overflow-y-auto px-6 py-6">
+        <nav
+          className="site-nav-drawer-scroll flex-1 overflow-y-auto overscroll-y-contain px-6 py-6"
+          aria-label="Primary"
+        >
           <ul className="space-y-0">
-            {items.map((item) => (
-              <li key={item.href} className="border-b border-white/25">
-                <Link
-                  className={`block py-5 font-heading text-lg uppercase tracking-[0.05em] text-white transition ${navHoverClass}`}
-                  href={item.href}
-                  onClick={onClose}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+            {items.map((item) => {
+              if (item.href === ENTERTAINMENT_HREF && hasEntertainmentAccordion && entertainmentSubnav) {
+                return (
+                  <li key={item.href} className="border-b border-white/25">
+                    <div className="flex min-h-[3.25rem] items-stretch">
+                      <Link
+                        className={`flex flex-1 items-center py-5 pr-2 font-heading text-lg uppercase tracking-[0.05em] text-white transition ${navHoverClass}`}
+                        href={item.href}
+                        onClick={onClose}
+                      >
+                        {item.label}
+                      </Link>
+                      <button
+                        type="button"
+                        className={`flex w-14 shrink-0 items-center justify-center text-white/90 transition hover:bg-white/10 hover:text-white ${navHoverClass}`}
+                        aria-expanded={entertainmentExpanded}
+                        aria-controls={entertainmentSubId}
+                        aria-label={
+                          entertainmentExpanded
+                            ? "Hide Entertainment pages"
+                            : "Show Entertainment pages"
+                        }
+                        onClick={() => setEntertainmentExpanded((v) => !v)}
+                      >
+                        <ChevronDown
+                          className={`h-6 w-6 transition-transform duration-200 ${entertainmentExpanded ? "rotate-180" : ""}`}
+                          aria-hidden
+                          strokeWidth={2.2}
+                        />
+                      </button>
+                    </div>
+                    {entertainmentExpanded ? (
+                      <ul
+                        id={entertainmentSubId}
+                        className="border-t border-white/15 bg-white/[0.06] py-1"
+                      >
+                        {entertainmentSubnav.map((sub) => (
+                          <li key={sub.href}>
+                            <Link
+                              className={`block py-3.5 pl-5 pr-4 font-heading text-sm uppercase tracking-[0.06em] text-white/90 transition hover:bg-white/10 hover:text-white ${navHoverClass}`}
+                              href={sub.href}
+                              onClick={onClose}
+                            >
+                              {sub.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </li>
+                );
+              }
+
+              return (
+                <li key={item.href} className="border-b border-white/25">
+                  <Link
+                    className={`block py-5 font-heading text-lg uppercase tracking-[0.05em] text-white transition ${navHoverClass}`}
+                    href={item.href}
+                    onClick={onClose}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
         <div className="flex items-end justify-between gap-4 border-t border-white/30 px-6 py-6">
@@ -96,7 +171,7 @@ export function SiteNavDrawer({ open, onClose, items }: SiteNavDrawerProps) {
               <TikTokIcon />
             </a>
           </div>
-          <div className=" hidden relative h-16 w-16 shrink-0 text-white/85">
+          <div className="relative hidden h-16 w-16 shrink-0 text-white/85">
             <svg className="h-full w-full" viewBox="0 0 100 100">
               <defs>
                 <path
@@ -107,26 +182,18 @@ export function SiteNavDrawer({ open, onClose, items }: SiteNavDrawerProps) {
               </defs>
               <text className="fill-current" style={{ fontSize: "6.5px" }}>
                 <textPath href={`#${sidebarRingId}`} startOffset="0%">
-                  6in1 · Group ·
+                  SIX-IN-ONE · Group ·
                 </textPath>
               </text>
             </svg>
             <span className="absolute inset-0 flex items-center justify-center text-white">
-              <ChevronDownIcon className="h-4 w-4" />
+              <ChevronDown className="h-4 w-4" aria-hidden />
             </span>
           </div>
         </div>
       </aside>
     </>,
     document.body
-  );
-}
-
-function ChevronDownIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" height="20" viewBox="0 0 24 24" width="20">
-      <path d="M6 9l6 6 6-6" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-    </svg>
   );
 }
 

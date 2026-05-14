@@ -9,12 +9,12 @@ import { licensingTabs, publishingContributors } from "../lib/site-data";
 export const metadata: Metadata = {
   title: "Publishing",
   description:
-    "6in1 Publishing offers co-publishing, rights structure, licensing, and catalog strategy for songwriters, composers, and rights holders.",
+    "SIX-IN-ONE Publishing offers co-publishing, rights structure, licensing, and catalog strategy for songwriters, composers, and rights holders.",
   alternates: { canonical: "/publishing" },
   openGraph: {
-    title: "Publishing | 6in1 Group",
+    title: "Publishing | SIX-IN-ONE Group",
     description:
-      "6in1 Publishing offers co-publishing, rights structure, licensing, and catalog strategy for songwriters, composers, and rights holders.",
+      "SIX-IN-ONE Publishing offers co-publishing, rights structure, licensing, and catalog strategy for songwriters, composers, and rights holders.",
     url: "/publishing",
   },
 };
@@ -26,7 +26,7 @@ export default function PublishingPage() {
       <PageHeroBand
         eyebrow="Publishing"
         title="Rights strategy and licensing built for scale."
-        description="6in1 Publishing supports creators through co-publishing, rights structure, and long-term catalog value."
+        description="SIX-IN-ONE Publishing supports creators through co-publishing, rights structure, and long-term catalog value."
         backgroundImage="https://images.unsplash.com/photo-1485579149621-3123dd979885?auto=format&fit=crop&w=1800&q=80"
         overlayClassName="bg-[#2e1358]/62"
         actions={
@@ -50,12 +50,17 @@ export default function PublishingPage() {
                   <article key={contributor.name} className="rounded-2xl border border-black/10 p-4">
                     <p className="font-semibold text-site-text">{contributor.name}</p>
                     <p className="text-sm text-[#864ef5]">{contributor.role}</p>
-                    <p className="mt-3 text-sm text-site-muted">
-                      Works: {contributor.works.join(", ")}
-                    </p>
-                    <p className="text-sm text-site-muted">IPI: {contributor.ipi}</p>
+                    {contributor.publisher ? (
+                      <p className="mt-2 text-sm text-site-muted">Publisher: {contributor.publisher}</p>
+                    ) : null}
+                    {contributor.works?.length ? (
+                      <p className="mt-3 text-sm text-site-muted">Works: {contributor.works.join(", ")}</p>
+                    ) : null}
+                    {contributor.ipi ? <p className="mt-2 text-sm text-site-muted">IPI: {contributor.ipi}</p> : null}
                     <p className="text-sm text-site-muted">PRO: {contributor.pro}</p>
-                    <p className="text-sm text-site-muted">Copyright: {contributor.copyrightYear}</p>
+                    {contributor.copyrightYear ? (
+                      <p className="text-sm text-site-muted">Copyright: {contributor.copyrightYear}</p>
+                    ) : null}
                   </article>
                 ))}
               </div>

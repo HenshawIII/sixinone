@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { PageHeroBand } from "../components/page-hero-band";
 import { PageReveal } from "../components/page-reveal";
 import { SiteCta } from "../components/site-cta";
+import { EntertainmentAbout } from "../components/entertainment/entertainment-about";
+import { EntertainmentPartnershipsCampaigns } from "../components/entertainment/entertainment-partnerships-campaigns";
 import { EntertainmentRosterTabs } from "../components/entertainment/entertainment-roster-tabs";
 import { athletes, musicians } from "../lib/site-data";
 import Link from "next/link";
@@ -9,12 +11,12 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Entertainment",
   description:
-    "Explore the 6in1 Entertainment roster of artists and athletes, with profiles across music, sports, and brand development.",
+    "Explore the SIX-IN-ONE Entertainment roster of artists and athletes, with profiles across music, sports, and brand development.",
   alternates: { canonical: "/entertainment" },
   openGraph: {
-    title: "Entertainment | 6in1 Group",
+    title: "Entertainment | SIX-IN-ONE Group",
     description:
-      "Explore the 6in1 Entertainment roster of artists and athletes, with profiles across music, sports, and brand development.",
+      "Explore the SIX-IN-ONE Entertainment roster of artists and athletes, with profiles across music, sports, and brand development.",
     url: "/entertainment",
   },
 };
@@ -38,6 +40,8 @@ export default function EntertainmentPage() {
           </Link>
         }
       />
+      <EntertainmentAbout />
+      <EntertainmentPartnershipsCampaigns />
       <EntertainmentRosterTabs athletes={athletes} musicians={musicians} />
       <SiteCta title="Want to work with our entertainment roster?" buttonClassName="!bg-[#ffb400] hover:!bg-[#e7a300]" />
     </>

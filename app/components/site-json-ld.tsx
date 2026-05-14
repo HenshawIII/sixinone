@@ -5,11 +5,11 @@ export function SiteJsonLd() {
   const data = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "6in1 Group",
+    name: "SIX-IN-ONE Group",
     url,
     logo: `${url}/logoGroup.png`,
     description:
-      "6in1 Group is a talent, image, and brand development company across entertainment and publishing.",
+      "SIX-IN-ONE Group is a talent, image, and brand development company across entertainment and publishing.",
     sameAs: ["https://www.instagram.com/"],
   };
 

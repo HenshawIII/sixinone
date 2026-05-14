@@ -83,6 +83,29 @@ body {
   color: var(--site-text);
 }
 
+/* Mobile nav drawer: thin, low-contrast scrollbar */
+.site-nav-drawer-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.22) transparent;
+}
+
+.site-nav-drawer-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.site-nav-drawer-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.site-nav-drawer-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+}
+
+.site-nav-drawer-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.38);
+}
+
 @keyframes home-slider-scroll {
   0% {
     transform: translateX(0);
@@ -103,6 +126,29 @@ body {
 
 .home-image-slider-track:hover {
   animation-play-state: running;
+}
+
+@keyframes home-brands-marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.home-brands-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: home-brands-marquee-scroll 65s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-brands-marquee-track {
+    animation: none;
+    transform: none;
+  }
 }
 
 .section-wrap {

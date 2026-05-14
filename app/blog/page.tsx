@@ -9,12 +9,12 @@ import { blogPosts } from "../lib/site-data";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Read company updates and industry perspective from 6in1 Group across entertainment, publishing, rights, and roster growth.",
+    "Read company updates and industry perspective from SIX-IN-ONE Group across entertainment, publishing, rights, and roster growth.",
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Blog | 6in1 Group",
+    title: "Blog | SIX-IN-ONE Group",
     description:
-      "Read company updates and industry perspective from 6in1 Group across entertainment, publishing, rights, and roster growth.",
+      "Read company updates and industry perspective from SIX-IN-ONE Group across entertainment, publishing, rights, and roster growth.",
     url: "/blog",
   },
 };
@@ -62,7 +62,7 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
-      <SiteCta title="Want tailored updates from 6in1?" buttonLabel="Contact Editorial Team" />
+      <SiteCta title="Want tailored updates from SIX-IN-ONE?" buttonLabel="Contact Editorial Team" />
     </>
   );
 }

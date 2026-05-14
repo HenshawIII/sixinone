@@ -124,7 +124,7 @@ export function HomeHero({ headline, supporting }: HomeHeroProps) {
       </div>
 
       <div className="hidden pointer-events-none absolute inset-x-8 bottom-8 z-10 flex items-center justify-between sm:inset-x-12 sm:bottom-10">
-        <p className="font-heading text-4xl leading-none text-white sm:text-6xl lg:pl-9">6in1 Group</p>
+        <p className="font-heading text-4xl leading-none text-white sm:text-6xl lg:pl-9">SIX-IN-ONE Group</p>
         <button
           className="pointer-events-auto relative flex h-24 w-24 items-center justify-center rounded-full border border-white/30 bg-black/25 backdrop-blur-sm transition hover:border-white/60"
           onClick={() => {

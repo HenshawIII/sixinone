@@ -6,7 +6,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteUrl();
   const now = new Date();
 
-  const staticPaths = ["", "/about", "/contact", "/blog", "/entertainment", "/publishing"];
+  const staticPaths = [
+    "",
+    "/about",
+    "/contact",
+    "/blog",
+    "/entertainment",
+    "/entertainment/live-events",
+    "/entertainment/sports-management",
+    "/entertainment/independent-artists",
+    "/publishing",
+  ];
 
   const staticEntries: MetadataRoute.Sitemap = staticPaths.map((path) => ({
     url: `${base}${path || "/"}`,

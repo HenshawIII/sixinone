@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { SITE_NAV_LINKS } from "../lib/nav-links";
+import { ENTERTAINMENT_SUBNAV_LINKS } from "../lib/entertainment-subnav-links";
 import { SiteNavDrawer } from "./site-nav-drawer";
 
 const SCROLL_THRESHOLD = 12;
@@ -31,10 +32,10 @@ export function SiteHeader() {
   const useLightChrome = useTransparentHeader && !drawerOpen;
   const brandLogoSrc = onEntertainment ? "/iconBlack.png" : "/iconWhite.png";
   const brandLogoAlt = onEntertainment
-    ? "6in1 Entertainment"
+    ? "SIX-IN-ONE Entertainment"
     : onPublishing
-      ? "6in1 Publishing"
-      : "6in1 Group";
+      ? "SIX-IN-ONE Publishing"
+      : "SIX-IN-ONE Group";
   const routeHeaderClass = onEntertainment
     ? "border-b border-black/10 bg-[#ffb400] shadow-sm backdrop-blur-md"
     : onPublishing
@@ -53,7 +54,7 @@ export function SiteHeader() {
         <Link
           href="/"
           className="relative flex shrink-0 items-center"
-          aria-label="6in1 Group home"
+          aria-label="SIX-IN-ONE Group home"
         >
           <Image
             src={brandLogoSrc}
@@ -99,6 +100,7 @@ export function SiteHeader() {
         open={drawerOpen}
         onClose={() => setDrawerOpen(false)}
         items={SITE_NAV_LINKS}
+        entertainmentSubnav={ENTERTAINMENT_SUBNAV_LINKS}
       />
     </header>
   );

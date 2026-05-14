@@ -50,7 +50,7 @@ export function SiteCta({
             <div className="relative justify-self-start md:justify-self-end">
               {/* <div className="rounded-3xl border border-white/20 bg-white/6 p-5 backdrop-blur-sm sm:p-6">
                 <Image
-                  alt="6in1 Group brand logo"
+                  alt="SIX-IN-ONE Group brand logo"
                   height={110}
                   src="/logoGroup.png"
                   width={320}

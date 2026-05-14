@@ -43,8 +43,11 @@ export function CompaniesFounderIntro() {
                 Abayomi Noah{" "}
                 <span className="text-brand-primary">Ogunmefun</span>
               </h2>
+              <p className="mt-4 max-w-xl text-sm font-medium uppercase tracking-[0.12em] text-site-text sm:text-base" data-reveal-text>
+                B.A. Philosophy, University of Lagos · 2009–2013 · Nigeria
+              </p>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-site-muted sm:text-lg" data-reveal-text>
-                6in1 Group was founded to unite entertainment and publishing under one disciplined growth engine—so talent,
+                SIX-IN-ONE Group was founded to unite entertainment and publishing under one disciplined growth engine—so talent,
                 catalogs, and partnerships move forward with clarity and commercial staying power.
               </p>
               <p className="mt-4 max-w-xl text-base leading-relaxed text-site-muted sm:text-lg" data-reveal-text>
@@ -68,7 +71,7 @@ export function CompaniesFounderIntro() {
                   className="group inline-flex items-center gap-2 rounded-full bg-brand-primary px-6 py-3 text-sm font-semibold text-white shadow-[0_12px_32px_rgba(227,67,28,0.35)] transition hover:opacity-95"
                   href="/contact"
                 >
-                  Contact 6in1 Group
+                  Contact SIX-IN-ONE Group
                   <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" aria-hidden />
                 </Link>
               </div>

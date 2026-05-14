@@ -6,20 +6,20 @@ import { SiteJsonLd } from "./components/site-json-ld";
 import { getSiteUrl } from "./lib/site-url";
 
 const siteUrl = getSiteUrl();
-const defaultTitle = "6in1 Group";
+const defaultTitle = "SIX-IN-ONE Group";
 const defaultDescription =
-  "6in1 Group is a talent, image, and brand development company across entertainment and publishing.";
+  "SIX-IN-ONE Group is a talent, image, and brand development company across entertainment and publishing.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: defaultTitle,
-    template: "%s | 6in1 Group",
+    template: "%s | SIX-IN-ONE Group",
   },
   description: defaultDescription,
   applicationName: defaultTitle,
   keywords: [
-    "6in1 Group",
+    "SIX-IN-ONE Group",
     "entertainment",
     "publishing",
     "talent development",
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     "licensing",
     "brand development",
   ],
-  authors: [{ name: "6in1 Group", url: siteUrl }],
-  creator: "6in1 Group",
-  publisher: "6in1 Group",
+  authors: [{ name: "SIX-IN-ONE Group", url: siteUrl }],
+  creator: "SIX-IN-ONE Group",
+  publisher: "SIX-IN-ONE Group",
   formatDetection: {
     email: false,
     address: false,
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     siteName: defaultTitle,
     title: defaultTitle,
     description: defaultDescription,
-    images: [{ url: "/logoGroup.png", alt: "6in1 Group" }],
+    images: [{ url: "/logoGroup.png", alt: "SIX-IN-ONE Group" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -86,7 +86,7 @@ export default function RootLayout({
         <SiteJsonLd />
         <div className="flex min-h-screen flex-col">
           <SiteHeader />
-          <main className="flex-1 pt-20">{children}</main>
+          <main className="min-w-0 flex-1 overflow-x-clip pt-20">{children}</main>
           <SiteFooter />
         </div>
       </body>

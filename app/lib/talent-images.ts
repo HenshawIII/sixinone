@@ -40,7 +40,7 @@ const TALENT_IMAGE_MAP: Record<string, TalentImage> = {
   },
   "ezekiel-touch": {
     src: "/Ezeikel.jpeg",
-    alt: "Ezekiel TOUCH — professional boxer portrait",
+    alt: "Seun Ezekiel (TOUCH) — professional boxer portrait",
   },
   "adeyemi-emmanuel": {
     src: "/Adeyem.jpeg",

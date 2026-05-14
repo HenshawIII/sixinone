@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ENTERTAINMENT_SUBNAV_LINKS } from "../lib/entertainment-subnav-links";
 
 export function SiteFooter() {
   const pathname = usePathname();
@@ -15,10 +16,10 @@ export function SiteFooter() {
       ? "/pubFoot.png"
       : "/logoGroup.png";
   const footerLogoAlt = onEntertainment
-    ? "6in1 Entertainment"
+    ? "SIX-IN-ONE Entertainment"
     : onPublishing
-      ? "6in1 Publishing"
-      : "6in1 Group";
+      ? "SIX-IN-ONE Publishing"
+      : "SIX-IN-ONE Group";
   const ctaClassName = onEntertainment
     ? "mt-6 inline-flex items-center justify-center rounded-full bg-[#ffb400] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#e7a300]"
     : onPublishing
@@ -41,7 +42,7 @@ export function SiteFooter() {
               />
             </Link>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-site-muted">
-              Built for talent. Driven by vision. 6in1 Group advances entertainment and publishing through strategic
+              Built for talent. Driven by vision. SIX-IN-ONE Group advances entertainment and publishing through strategic
               growth, rights-focused operations, and long-term brand development.
             </p>
             <Link href="/contact" className={ctaClassName}>
@@ -49,7 +50,7 @@ export function SiteFooter() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:col-span-7 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:col-span-7 lg:grid-cols-4">
             <FooterLinkGroup
               title="Company"
               links={[
@@ -60,9 +61,13 @@ export function SiteFooter() {
             />
 
             <FooterLinkGroup
+              title="Entertainment"
+              links={ENTERTAINMENT_SUBNAV_LINKS.map((l) => ({ href: l.href, label: l.label }))}
+            />
+
+            <FooterLinkGroup
               title="Divisions"
               links={[
-                { href: "/entertainment", label: "Entertainment" },
                 { href: "/publishing", label: "Publishing" },
                 { href: "/contact", label: "Contact" },
               ]}
@@ -88,7 +93,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 flex flex-col gap-3 border-t border-black/10 pt-6 text-xs text-site-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} 6in1 Group. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} SIX-IN-ONE Group. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/contact" className="transition hover:text-site-text">
               Privacy

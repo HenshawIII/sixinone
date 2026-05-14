@@ -17,7 +17,7 @@ export function CompaniesAbout() {
               className="mt-4 text-base leading-relaxed text-site-muted tracking-tight sm:text-lg"
               data-reveal-text
             >
-              6in1 Group unites specialist companies that help creators turn momentum into durable careers. We combine
+              SIX-IN-ONE Group unites specialist companies that help creators turn momentum into durable careers. We combine
               development, strategy, and execution so talent and rights holders can grow with confidence.
             </p>
           </header>
@@ -62,7 +62,7 @@ export function CompaniesAbout() {
             <div data-reveal>
               <InfoCard
                 accent="gold"
-                title="6in1 Entertainment"
+                title="SIX-IN-ONE Entertainment"
                 description="Talent development, representation, and growth across music and sports. We build visibility, positioning, and audience momentum."
                 href="/entertainment"
                 hrefLabel="Open Entertainment"
@@ -71,7 +71,7 @@ export function CompaniesAbout() {
             <div data-reveal>
               <InfoCard
                 accent="purple"
-                title="6in1 Publishing"
+                title="SIX-IN-ONE Publishing"
                 description="Co-publishing, rights administration, and licensing strategy that help creators protect catalog and monetize globally."
                 href="/publishing"
                 hrefLabel="Open Publishing"
