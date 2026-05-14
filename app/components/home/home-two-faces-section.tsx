@@ -69,7 +69,7 @@ export function HomeTwoFacesSection() {
 
         <div
           data-reveal-stagger
-          className="mx-auto grid max-w-[94%] grid-cols-2 gap-y-10 py-10 sm:max-w-[90%] sm:grid-cols-3 lg:grid-cols-4"
+          className="mx-auto grid max-w-[94%] grid-cols-1 gap-y-10 py-10 sm:max-w-[90%] md:grid-cols-2 lg:grid-cols-4"
         >
           <StatItem
             icon={<Music2 className="h-8 w-8" strokeWidth={1.8} />}
