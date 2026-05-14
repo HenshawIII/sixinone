@@ -44,9 +44,11 @@ export default function IndependentArtistsPage() {
           </Link>
         }
       />
-      <section className="section-soft border-t border-black/6 bg-site-soft py-14 sm:py-16">
-        <div className="section-wrap">
-          <EntertainmentIndependentArtists />
+      <section className="bg-black! pt-0">
+        <div className="mx-auto w-full max-w-full overflow-hidden rounded-t-[2.25rem] bg-white shadow-[0_-8px_48px_rgba(0,0,0,0.12)]">
+          <div className="section-wrap py-12 sm:py-16 md:py-20">
+            <EntertainmentIndependentArtists />
+          </div>
         </div>
       </section>
       <SiteCta

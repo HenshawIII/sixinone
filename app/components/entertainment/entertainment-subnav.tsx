@@ -28,8 +28,8 @@ export function EntertainmentSubnav() {
       aria-label="Entertainment section"
       className="sticky top-20 z-40 border-b border-black/10 bg-[#ffb400]/95 backdrop-blur-md"
     >
-      <div className="mx-auto flex w-full max-w-[94%] justify-center overflow-x-auto px-2 py-2.5 sm:max-w-[90%] sm:px-4 sm:py-3">
-        <div className="inline-flex shrink-0 items-center justify-center gap-1 sm:gap-2">
+      <div className="mx-auto flex w-full min-w-0 max-w-[94%] justify-start overflow-x-auto overflow-y-hidden overscroll-x-contain px-2 py-2.5 [-webkit-overflow-scrolling:touch] sm:max-w-[90%] sm:px-4 sm:py-3 lg:justify-center">
+        <div className="inline-flex shrink-0 items-center gap-1 sm:gap-2">
           {ENTERTAINMENT_SUBNAV_LINKS.map((item) => {
             const active = isActive(pathname, item.href);
             return (
