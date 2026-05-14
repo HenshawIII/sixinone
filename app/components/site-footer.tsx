@@ -86,7 +86,7 @@ export function SiteFooter() {
                   TikTok
                 </a>
               </div>
-              <p className="mt-6 text-sm text-site-muted">hello@6in1group.com</p>
+              <p className="mt-6 text-sm text-site-muted">hello@sixinonegroup.com</p>
               <p className="text-sm text-site-muted">Lagos · London · Toronto</p>
             </div>
           </div>
