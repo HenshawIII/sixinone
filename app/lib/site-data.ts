@@ -36,7 +36,7 @@ export const homeCopy = {
   supporting:
     "SIX-IN-ONE Group is a talent, image, and brand development company working across entertainment, publishing, and cultural business development.",
   watchword:
-    "The watchword is — artistry development, Image/likeness creation, and brand establishment for the artist.",
+    "The watchword is — artistry/talent development, Image/likeness creation, and brand establishment for the artist.",
   about:
     "SIX-IN-ONE Group is a forward-facing talent and brand development company operating at the intersection of entertainment, publishing, and strategic growth.",
 };

@@ -17,7 +17,7 @@ const TABS: readonly TabContent[] = [
   {
     key: "mission",
     label: "Our Mission",
-    heading: "Empowering creators to build careers that last.",
+    heading: "Empowering talents to build careers that last.",
     body: "We help artists, athletes, and rights holders turn momentum into long-term value through development, strategy, and disciplined execution across every stage of their journey.",
     image: {
       src: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1400&q=80",

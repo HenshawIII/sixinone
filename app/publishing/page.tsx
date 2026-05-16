@@ -4,6 +4,7 @@ import { LicensingTabs } from "../components/licensing-tabs";
 import { PageHeroBand } from "../components/page-hero-band";
 import { PageReveal } from "../components/page-reveal";
 import { SiteCta } from "../components/site-cta";
+import { PublishingSyncDeals } from "../components/publishing/publishing-sync-deals";
 import { licensingTabs, publishingContributors } from "../lib/site-data";
 
 export const metadata: Metadata = {
@@ -65,6 +66,8 @@ export default function PublishingPage() {
                 ))}
               </div>
             </section>
+
+            <PublishingSyncDeals />
           </div>
         </div>
       </section>

@@ -87,7 +87,7 @@ export function SiteFooter() {
                 </a>
               </div>
               <p className="mt-6 text-sm text-site-muted">hello@sixinonegroup.com</p>
-              <p className="text-sm text-site-muted">Lagos · London · Toronto</p>
+              <p className="text-sm text-site-muted">Lagos · Amsterdam</p>
             </div>
           </div>
         </div>

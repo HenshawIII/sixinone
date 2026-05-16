@@ -38,12 +38,12 @@ export function HomeTwoFacesSection() {
             >
               {homeCopy.watchword}
             </p>
-            <p
+            {/* <p
               className="mt-4 max-w-3xl font-body text-base leading-relaxed text-site-muted sm:text-lg"
               data-reveal-text
             >
               {homeCopy.supporting}
-            </p>
+            </p> */}
             <div className="mt-8 flex flex-wrap gap-3" data-reveal-stagger>
               <Link className="button-brand" href="/about">
                 Learn More
