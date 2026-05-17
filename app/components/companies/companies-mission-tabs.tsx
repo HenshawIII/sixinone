@@ -20,7 +20,7 @@ const TABS: readonly TabContent[] = [
     heading: "Empowering talents to build careers that last.",
     body: "We help artists, athletes, and rights holders turn momentum into long-term value through development, strategy, and disciplined execution across every stage of their journey.",
     image: {
-      src: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1400&q=80",
+      src: "/boxer.jpg",
       alt: "Creators collaborating in a competitive gaming environment",
     },
   },
@@ -30,7 +30,7 @@ const TABS: readonly TabContent[] = [
     heading: "A connected ecosystem where talent thrives globally.",
     body: "We see a future where creators have direct access to the structure, partners, and platforms they need to grow without compromise, on their own terms and across borders.",
     image: {
-      src: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1400&q=80",
+      src: "/glob.avif",
       alt: "Esports professional focused during a live competition",
     },
   },
@@ -40,7 +40,7 @@ const TABS: readonly TabContent[] = [
     heading: "Integrity, ambition, and a builder's mindset.",
     body: "We back the people we work with for the long run. We move with clarity, communicate with honesty, and invest in the craft, the catalog, and the careers behind every brand we touch.",
     image: {
-      src: "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1400&q=80",
+      src: "/build.png",
       alt: "Studio team working together on a creative project",
     },
   },

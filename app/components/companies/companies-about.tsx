@@ -29,7 +29,7 @@ export function CompaniesAbout() {
                   className="object-cover"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1600&q=80"
+                  src="/collabo.jpg"
                 />
               </div>
             </article>
@@ -40,7 +40,7 @@ export function CompaniesAbout() {
                   className="object-cover"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=80"
+                  src="https://ik.imagekit.io/ttibelkqm/Portfolio/6in1/strategy.jpg"
                 />
               </div>
             </article>
