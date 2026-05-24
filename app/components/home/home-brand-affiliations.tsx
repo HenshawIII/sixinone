@@ -10,12 +10,13 @@ const BRAND_LOGOS = [
   { src: "/brandicons/universal.png", alt: "Universal Music Group" },
   { src: "/brandicons/Orchard.png", alt: "The Orchard" },
   { src: "/brandicons/tokyo.png", alt: "Tokyo James" },
-  { src: "/brandicons/starstruckk.png", alt: "Starstruck Management" },
+  { src: "/sstruck.png", alt: "Starstruck Management" },
   { src: "/brandicons/empire.png", alt: "EMPIRE" },
   { src: "/brandicons/sony.png", alt: "Sony Music Publishing" },
   { src: "/brandicons/tailored.png", alt: "Tailored Records Global" },
   { src: "/brandicons/plug.png", alt: "The Plug Talent Agency" },
   { src: "/brandicons/balmoral.png", alt: "Balmoral Promotions" },
+  { src: "/brandicons/ArtC.PNG", alt: "The Art Cartel" },
 ] as const;
 
 export function HomeBrandAffiliations() {

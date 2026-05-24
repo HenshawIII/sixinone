@@ -21,7 +21,7 @@ export function PageHeroBand({
     <section className="section-white pt-0">
       <div className="mx-auto w-full max-w-full overflow-hidden bg-white">
         <div
-          className="relative overflow-hidden bg-black px-6 py-16 text-white sm:px-10 sm:py-20"
+          className="relative overflow-hidden bg-black px-6 py-16 text-white sm:px-12 sm:py-20 md:px-16 md:py-24 lg:px-20 lg:py-28"
           style={backgroundImage ? { backgroundImage: `url("${backgroundImage}")`, backgroundSize: "cover", backgroundPosition: "center" } : undefined}
         >
           {backgroundImage ? <div aria-hidden className={`absolute inset-0 ${overlayClassName}`} /> : null}

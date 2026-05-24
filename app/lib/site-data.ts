@@ -100,8 +100,12 @@ export const musicians: MusicianProfile[] = [
     kind: "musician",
     slug: "bigbird-kuti",
     name: "BIGBIRD Kuti",
-    identity: "Afrobeat Artist",
-    bio: "BIGBIRD Kuti carries forward Afrobeat influence with contemporary vocal styling and energetic live delivery.",
+    identity: "Rap & Afrobeat · BIGBIRD & THA VIPER",
+    bio: `BIGBIRD is the alter ego of Afrobeat icon Seun Kuti and Nigerian rap icon Vector, embarking on a new musical journey with lead single "The Matter" from the upcoming project BIGBIRD & THA VIPER—the first fusion of rap and Afrobeat with outstanding lyricism and wordplay, 808 drums, saxophone, and classical instrumentation.
+
+"The Matter" was inspired by Afrobeat legend Fela Kuti's "I No Get Eyes For Back" from Alagbon Close, sampling the horns and piano at the opening of the original track.
+
+Seun Kuti released four albums with Egypt 80: Many Things (2008), From Africa with Fury: Rise for Knitting Factory Records (2011, coproduced by Brian Eno and John Reynolds), A Long Way Beginning (2014), and the Grammy-nominated Black Times (2018) featuring Carlos Santana, plus numerous EPs. He has played for receptive audiences globally and collaborated widely. In 2022 he joined Roots frontman Black Thought on the EP African Dreams. In 2023 he appeared on Janelle Monáe's The Age of Pleasure (Grammy nominee for Album of the Year) on "Float" and "Knows Better," teamed with Talib Kweli and Madlib on Liberation 2 ("Nat Turner" featuring Cassper Nyovest), and released a new version of "Bad Man Lighter" with Black Thought featuring Vic Mensa.`,
     discography: [
       { title: "Spotify Profile", link: "https://open.spotify.com/artist/7n7wewebGwzL1Yz8yxdz4M" },
       { title: "Apple Music Profile", link: "https://music.apple.com/us/artist/bigbird-kuti/1818566485" },
@@ -119,6 +123,31 @@ export const musicians: MusicianProfile[] = [
     gigs: [
       { date: "Aug 15", city: "Lagos", details: "Afrobeat Night", ticketUrl: "https://youtube.com/@bigbirdkuti" },
       { date: "Oct 02", city: "Berlin", details: "Global Afrobeat Festival", ticketUrl: "https://open.spotify.com/artist/7n7wewebGwzL1Yz8yxdz4M" },
+    ],
+  },
+  {
+    kind: "musician",
+    slug: "valka",
+    name: "Valka",
+    identity: "Singer / Digital Creator",
+    bio: `Valka (Valeria García Calle) is a Colombian singer and digital creator born May 10, 2002, in Medellín. She began pursuing music at 15 and launched her public presence in 2019 via TikTok (@soyvalka), growing to over 5 million followers.
+
+Her breakthrough came with "Me Provocas" (2020), a guaracha track with DJ Fumaratto that surpassed 156 million streams and established her as a leading female voice in Colombia's electronic music scene. She followed with her first solo single "Solita" (2021), then accelerated in 2024 with "Mi novio tiene novia" (W Sound, lyrics by Keityn) and an international collaboration with Gianluca Vacchi on "Veo", filmed in Italy.
+
+Her debut album Valquirias (2024) is a conceptual 13-track project inspired by Norse mythology, centered on female empowerment—recorded entirely without features by design. She defines herself by versatility—spanning guaracha, urban pop, and reggaeton—with dream collaborators from Karol G to Andrea Bocelli. In 2025 she joined La Casa de Alofoke 2 as the only Colombian cast member, broadening her pan–Latin American reach. She has been profiled by El Espectador, KienyKe, and NTN24.`,
+    discography: [
+      { title: "Spotify Profile", link: "https://open.spotify.com/artist/0nZi35gC9oUvfWsegp9VVr?si=e21qWxzHQi6Vx-_2C71c4A" },
+    ],
+    mediaEmbeds: [
+      { platform: "Spotify", link: "https://open.spotify.com/artist/0nZi35gC9oUvfWsegp9VVr?si=e21qWxzHQi6Vx-_2C71c4A" },
+    ],
+    socials: [
+      { label: "Instagram", url: "https://www.instagram.com/soyvalka" },
+      { label: "TikTok", url: "https://www.tiktok.com/@soyvalka" },
+      { label: "Spotify", url: "https://open.spotify.com/artist/0nZi35gC9oUvfWsegp9VVr?si=e21qWxzHQi6Vx-_2C71c4A" },
+    ],
+    gigs: [
+      { date: "2024", city: "Medellín", details: "Valquirias album cycle", ticketUrl: "https://open.spotify.com/artist/0nZi35gC9oUvfWsegp9VVr?si=e21qWxzHQi6Vx-_2C71c4A" },
     ],
   },
   {

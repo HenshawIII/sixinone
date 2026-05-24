@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { FounderSocialIcons } from "../footer-social-icons";
 
 export function CompaniesFounderIntro() {
   return (
@@ -66,14 +67,20 @@ export function CompaniesFounderIntro() {
                 ))}
               </div> */}
 
-              <div data-reveal-stagger className="mt-10">
-                <Link
-                  className="group inline-flex items-center gap-2 rounded-full bg-brand-primary px-6 py-3 text-sm font-semibold text-white shadow-[0_12px_32px_rgba(227,67,28,0.35)] transition hover:opacity-95"
-                  href="/contact"
-                >
-                  Contact SIX-IN-ONE Group
-                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" aria-hidden />
-                </Link>
+              <div data-reveal-stagger className="mt-10 space-y-5">
+                <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+                  <Link
+                    className="group inline-flex items-center gap-2 rounded-full bg-brand-primary px-6 py-3 text-sm font-semibold text-white shadow-[0_12px_32px_rgba(227,67,28,0.35)] transition hover:opacity-95"
+                    href="/contact"
+                  >
+                    Contact SIX-IN-ONE Group
+                    <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" aria-hidden />
+                  </Link>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-site-muted">Connect with the founder</p>
+                  <FounderSocialIcons className="mt-3" />
+                </div>
               </div>
             </div>
           </div>

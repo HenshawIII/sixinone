@@ -27,7 +27,7 @@ export function EntertainmentPartnershipsCampaigns() {
             </p>
           </div>
 
-          <div className="mx-auto mt-8 grid max-w-5xl gap-8 md:mt-10 md:grid-cols-2 md:gap-10 lg:gap-12">
+          <div className="mx-auto mt-8 grid max-w-[94%] sm:max-w-[90%] gap-8 md:mt-10 md:grid-cols-2 md:gap-10 lg:gap-12">
             <div className="text-left">
               <h3 className="font-heading text-xs uppercase tracking-[0.2em] text-[#ffb400]">Partnerships</h3>
               <div className="mt-3 flex flex-wrap gap-2">

@@ -9,12 +9,12 @@ import {
 export function EntertainmentIndependentArtists() {
   return (
     <div className="space-y-14">
-      <header className="mx-auto max-w-3xl text-center">
-        <h2 className="font-heading text-3xl text-site-text sm:text-4xl">{independentArtistsIntro.headline}</h2>
+      <header className="mx-auto px-4 md:px-0 max-w-3xl ">
+        <h2 className="font-heading text-3xl text-site-text sm:text-4xl ">{independentArtistsIntro.headline}</h2>
         <p className="mt-4 text-base leading-relaxed text-site-muted sm:text-lg">{independentArtistsIntro.subhead}</p>
       </header>
 
-      <div className="mx-auto max-w-3xl space-y-4 text-base leading-relaxed text-site-muted sm:text-lg">
+      <div className="mx-auto px-4 md:px-0 max-w-3xl space-y-4 text-base leading-relaxed text-site-muted sm:text-lg">
         {independentArtistsIntro.body.map((p, i) => (
           <p key={i}>{p}</p>
         ))}

@@ -18,6 +18,10 @@ const TALENT_IMAGE_MAP: Record<string, TalentImage> = {
     src: "/seunii.webp",
     alt: "Afrobeat performer with energetic crowd",
   },
+  valka: {
+    src: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1400&q=80",
+    alt: "Valka — Colombian singer and digital creator",
+  },
   eld3r: {
     src: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1400&q=80",
     alt: "Alternative artist in a live concert scene",

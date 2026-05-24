@@ -125,6 +125,14 @@ export const liveEvents: LiveEvent[] = [
     capacity: "3,000",
     year: 2024,
   },
+  {
+    title: "Vector at The Lower Third",
+    venue: "The Lower Third",
+    role: "Artist Manager (Vector)",
+    dateLine: "July 5, 2024",
+    capacity: "250",
+    year: 2024,
+  },
 ];
 
 export function liveEventsByYearDescending(): Map<number, LiveEvent[]> {

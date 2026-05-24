@@ -5,11 +5,24 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { homeCopy } from "../../lib/site-data";
 
-const sliderImages = [
-  { src: "/veci.jpeg", alt: "Vector performing" },
+type SliderImage = {
+  src: string;
+  alt: string;
+  /** Use "contain" for portraits so faces are not cropped in the slide frame. */
+  fit?: "cover" | "contain";
+  objectPosition?: string;
+};
+
+const sliderImages: SliderImage[] = [
+  { src: "/Vecr.jpeg", alt: "Vector performing" },
   { src: "/boxers.jpg", alt: "Boxer performing" },
   { src: "/artists.jpg", alt: "Artists performing" },
-  { src: "/seun.webp", alt: "Seun Kuti performing" },
+  {
+    src: "https://ik.imagekit.io/ttibelkqm/Portfolio/6in1/Seun.png",
+    alt: "Seun Kuti performing",
+    fit: "contain",
+    objectPosition: "center top",
+  },
   { src: "/boxii.jpg", alt: "Boxers performing" },
 ];
 
@@ -60,7 +73,14 @@ export function HomeTwoFacesSection() {
                   className="relative h-[52vh] min-h-[280px] max-h-[420px] w-[88vw] shrink-0 overflow-hidden rounded-2xl sm:h-72 sm:min-h-0 sm:max-h-none sm:w-[620px] lg:h-[70vh] lg:w-[700px]"
                   key={`${image.src}-${index}`}
                 >
-                  <img alt={image.alt} className="h-full w-full object-cover" src={image.src} />
+                  <img
+                    alt={image.alt}
+                    className={`h-full w-full bg-black/5 ${
+                      image.fit === "contain" ? "object-contain" : "object-cover"
+                    }`}
+                    style={image.objectPosition ? { objectPosition: image.objectPosition } : undefined}
+                    src={image.src}
+                  />
                 </article>
               ))}
             </div>
@@ -69,7 +89,7 @@ export function HomeTwoFacesSection() {
 
         <div
           data-reveal-stagger
-          className="mx-auto grid max-w-[94%] grid-cols-1 gap-y-10 py-10 sm:max-w-[90%] md:grid-cols-2 lg:grid-cols-4"
+          className="mx-auto grid max-w-[94%] grid-cols-1 gap-y-10 pt-10 pb-2 sm:max-w-[90%] md:grid-cols-2 lg:grid-cols-4"
         >
           <StatItem
             icon={<Music2 className="h-8 w-8" strokeWidth={1.8} />}
@@ -119,9 +139,9 @@ function StatItem({
   description: string;
 }) {
   return (
-    <article className="border-r border-black/6 px-8 py-10 last:border-r-0 lg:px-12">
+    <article className="border-r border-black/6 px-8 md:py-10 py-6 last:border-r-0 lg:px-12">
       <div className="text-site-text">{icon}</div>
-      <p className="mt-24 font-heading text-6xl leading-none text-site-text">{value}</p>
+      <p className="mt-16 md:mt-24 font-heading text-4xl md:text-5xl xl:text-6xl leading-none text-site-text">{value}</p>
       {/* <p className="mt-4 font-body text-xl font-medium text-site-text">{title}</p> */}
       <p className="mt-2 max-w-xs text-sm leading-relaxed text-site-muted">{description}</p>
     </article>

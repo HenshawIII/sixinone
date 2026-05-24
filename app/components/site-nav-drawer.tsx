@@ -5,6 +5,7 @@ import { ChevronDown, X } from "lucide-react";
 import { useEffect, useId, useState } from "react";
 import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
+import { entertainmentSocialLinks } from "../lib/site-contact";
 import { useMounted } from "./use-mounted";
 
 type NavItem = { readonly href: string; readonly label: string };
@@ -160,16 +161,25 @@ export function SiteNavDrawer({ open, onClose, items, entertainmentSubnav }: Sit
           </ul>
         </nav>
         <div className="flex items-end justify-between gap-4 border-t border-white/30 px-6 py-6">
-          <div className="flex gap-4 text-white">
-            <a href="https://instagram.com/" rel="noopener noreferrer" target="_blank" aria-label="Instagram">
-              <InstagramIcon />
-            </a>
-            <a href="https://facebook.com/" rel="noopener noreferrer" target="_blank" aria-label="Facebook">
-              <FacebookIcon />
-            </a>
-            <a href="https://tiktok.com/" rel="noopener noreferrer" target="_blank" aria-label="TikTok">
-              <TikTokIcon />
-            </a>
+          <div className="flex flex-wrap gap-4 text-white">
+            {entertainmentSocialLinks.map((link) => {
+              const label = link.label.toLowerCase();
+              if (label.includes("instagram")) {
+                return (
+                  <a key={link.url} href={link.url} rel="noopener noreferrer" target="_blank" aria-label={link.label}>
+                    <InstagramIcon />
+                  </a>
+                );
+              }
+              if (label.includes("facebook")) {
+                return (
+                  <a key={link.url} href={link.url} rel="noopener noreferrer" target="_blank" aria-label={link.label}>
+                    <FacebookIcon />
+                  </a>
+                );
+              }
+              return null;
+            })}
           </div>
           <div className="relative hidden h-16 w-16 shrink-0 text-white/85">
             <svg className="h-full w-full" viewBox="0 0 100 100">
@@ -211,14 +221,6 @@ function FacebookIcon() {
   return (
     <svg fill="currentColor" height="22" viewBox="0 0 24 24" width="22">
       <path d="M14 13.5h3l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14C16.524 2.1 15.67 2 14.64 2 12.52 2 11 3.47 11 6.3v3.2H8v4h3V22h4v-8.5z" />
-    </svg>
-  );
-}
-
-function TikTokIcon() {
-  return (
-    <svg fill="currentColor" height="22" viewBox="0 0 24 24" width="22">
-      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64v-3.5a6.33 6.33 0 0 0-1-.05A6.34 6.34 0 0 0 5 20.66a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.05z" />
     </svg>
   );
 }

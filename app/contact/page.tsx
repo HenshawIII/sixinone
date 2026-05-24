@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
-import { Mail, MessageSquareMore, UsersRound } from "lucide-react";
+import { Mail, MapPin, MessageSquareMore } from "lucide-react";
 import { PageHeroBand } from "../components/page-hero-band";
 import { PageReveal } from "../components/page-reveal";
 import { SiteCta } from "../components/site-cta";
 import { SimpleForm } from "../components/simple-form";
+import { officeLocations, siteEmail } from "../lib/site-contact";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact SIX-IN-ONE Group for talent representation, publishing support, licensing, media, and strategic partnerships across Lagos, London, and Toronto.",
+    "Contact SIX-IN-ONE Group in Lagos, Nigeria and Amsterdam for talent representation, publishing, licensing, and partnerships.",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact | SIX-IN-ONE Group",
     description:
-      "Contact SIX-IN-ONE Group for talent representation, publishing support, licensing, media, and strategic partnerships across Lagos, London, and Toronto.",
+      "Contact SIX-IN-ONE Group in Lagos, Nigeria and Amsterdam for talent representation, publishing, licensing, and partnerships.",
     url: "/contact",
   },
 };
@@ -48,18 +49,28 @@ export default function ContactPage() {
                 Tell us what you are working on and the right team will follow up. We usually respond to priority enquiries
                 quickly.
               </p>
-              <div className="mt-6 grid gap-4 md:grid-cols-3" data-reveal-stagger>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" data-reveal-stagger>
                 <article className="rounded-2xl border border-black/10 bg-white p-4">
                   <Mail className="h-5 w-5 text-brand-primary" />
                   <p className="mt-3 font-semibold text-site-text">Email</p>
-                  <p className="text-sm text-site-muted">hello@6in1group.com</p>
+                  <a className="text-sm text-site-muted transition hover:text-site-text" href={`mailto:${siteEmail}`}>
+                    {siteEmail}
+                  </a>
                 </article>
-                <article className="rounded-2xl border border-black/10 bg-white p-4">
-                  <UsersRound className="h-5 w-5 text-brand-primary" />
-                  <p className="mt-3 font-semibold text-site-text">Offices</p>
-                  <p className="text-sm text-site-muted">Lagos, London, Toronto</p>
-                </article>
-                <article className="rounded-2xl border border-black/10 bg-white p-4">
+                {officeLocations.map((office) => (
+                  <article key={office.city} className="rounded-2xl border border-black/10 bg-white p-4">
+                    <MapPin className="h-5 w-5 text-brand-primary" />
+                    <p className="mt-3 font-semibold text-site-text">{office.city} office</p>
+                    <address className="mt-2 space-y-0.5 text-sm not-italic leading-relaxed text-site-muted">
+                      {office.lines.map((line) => (
+                        <span key={line} className="block">
+                          {line}
+                        </span>
+                      ))}
+                    </address>
+                  </article>
+                ))}
+                <article className="rounded-2xl border border-black/10 bg-white p-4 sm:col-span-2 lg:col-span-1">
                   <MessageSquareMore className="h-5 w-5 text-brand-primary" />
                   <p className="mt-3 font-semibold text-site-text">Best for</p>
                   <p className="text-sm text-site-muted">Talent, publishing, media, partnerships</p>

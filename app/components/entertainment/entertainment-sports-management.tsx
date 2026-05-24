@@ -3,8 +3,8 @@ import type { AthleteProfile } from "../../lib/site-data";
 
 export function EntertainmentSportsManagement({ athletes }: { athletes: AthleteProfile[] }) {
   return (
-    <div className="mx-auto max-w-3xl space-y-10 px-2">
-      <div className="space-y-4 text-base leading-relaxed text-site-muted sm:text-lg ">
+    <div className="mx-auto md:px-0 max-w-3xl space-y-10 px-2">
+      <div className=" space-y-4 text-base leading-relaxed text-site-muted sm:text-lg ">
         <p>
           SIX-IN-ONE Entertainment provides sports management that mirrors how we treat music careers: disciplined
           positioning, fight-to-fight narrative, and partnerships that respect the athlete&apos;s long arc—not only the
