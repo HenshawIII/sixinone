@@ -17,7 +17,7 @@ export const officeLocations: OfficeLocation[] = [
   },
 ];
 
-export const siteEmail = "hello@6in1group.com" as const;
+export const siteEmail = "hello@sixinonegroup.com" as const;
 
 export type SocialLink = {
   label: string;

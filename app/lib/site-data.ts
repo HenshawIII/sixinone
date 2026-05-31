@@ -150,137 +150,137 @@ Her debut album Valquirias (2024) is a conceptual 13-track project inspired by N
       { date: "2024", city: "Medellín", details: "Valquirias album cycle", ticketUrl: "https://open.spotify.com/artist/0nZi35gC9oUvfWsegp9VVr?si=e21qWxzHQi6Vx-_2C71c4A" },
     ],
   },
-  {
-    kind: "musician",
-    slug: "eld3r",
-    name: "ELD3R",
-    identity: "Alternative Artist",
-    bio: "ELD3R crafts emotionally rich records with modern production and a strong digital-native audience connection.",
-    discography: [
-      { title: "Spotify Profile", link: "https://open.spotify.com/artist/77HukpCjCtGDQSCmYLi5vc" },
-      { title: "Apple Music Profile", link: "https://music.apple.com/us/artist/eld3r/1691283169" },
-    ],
-    mediaEmbeds: [
-      { platform: "YouTube", link: "https://youtube.com/@the.eld3r" },
-      { platform: "Spotify", link: "https://open.spotify.com/artist/77HukpCjCtGDQSCmYLi5vc" },
-    ],
-    socials: [
-      { label: "Instagram", url: "https://www.instagram.com/the.eld3r" },
-      { label: "TikTok", url: "https://www.tiktok.com/@the.eld3r" },
-      { label: "X", url: "https://x.com/the_eld3r" },
-      { label: "YouTube", url: "https://youtube.com/@the.eld3r" },
-      { label: "Spotify", url: "https://open.spotify.com/artist/77HukpCjCtGDQSCmYLi5vc" },
-      { label: "Apple Music", url: "https://music.apple.com/us/artist/eld3r/1691283169" },
-    ],
-    gigs: [
-      { date: "Jun 29", city: "Accra", details: "Indie Night Circuit", ticketUrl: "https://youtube.com/@the.eld3r" },
-      { date: "Nov 08", city: "Johannesburg", details: "Alt City Session", ticketUrl: "https://open.spotify.com/artist/77HukpCjCtGDQSCmYLi5vc" },
-    ],
-  },
-  {
-    kind: "musician",
-    slug: "kehne",
-    name: "KEHNE",
-    identity: "Singer / Songwriter",
-    bio: "KEHNE develops polished melodic records with strong vocal identity and performance-ready compositions.",
-    discography: [
-      { title: "Spotify Profile", link: "https://open.spotify.com/artist/64YrHk9Eas75hAl2q5y6o1" },
-      { title: "Apple Music Profile", link: "https://music.apple.com/us/artist/kehne/1704151462" },
-    ],
-    mediaEmbeds: [
-      { platform: "YouTube", link: "https://youtube.com/@kehnne" },
-      { platform: "Spotify", link: "https://open.spotify.com/artist/64YrHk9Eas75hAl2q5y6o1" },
-    ],
-    socials: [
-      { label: "Instagram", url: "https://www.instagram.com/kehnnne" },
-      { label: "TikTok", url: "https://www.tiktok.com/@kehnnne" },
-      { label: "X", url: "https://x.com/kehnnne" },
-      { label: "YouTube", url: "https://youtube.com/@kehnne" },
-      { label: "Spotify", url: "https://open.spotify.com/artist/64YrHk9Eas75hAl2q5y6o1" },
-      { label: "Apple Music", url: "https://music.apple.com/us/artist/kehne/1704151462" },
-    ],
-    gigs: [
-      { date: "May 31", city: "Lagos", details: "Writers & Voices Session", ticketUrl: "https://youtube.com/@kehnne" },
-      { date: "Sep 27", city: "Nairobi", details: "Soundscape Live", ticketUrl: "https://open.spotify.com/artist/64YrHk9Eas75hAl2q5y6o1" },
-    ],
-  },
-  {
-    kind: "musician",
-    slug: "ao-machine",
-    name: "AO MACHINE",
-    identity: "Recording Artist",
-    bio: "AO MACHINE releases energetic records built for crossover audiences and high-visibility campaign moments.",
-    discography: [
-      { title: "Spotify Profile", link: "https://open.spotify.com/artist/12GJRrWKVNDUZAyxE3rKas" },
-      { title: "Apple Music Profile", link: "https://music.apple.com/us/artist/ao-machine/1568768390" },
-    ],
-    mediaEmbeds: [
-      { platform: "YouTube", link: "https://youtube.com/@aomachinevevo5401" },
-      { platform: "Spotify", link: "https://open.spotify.com/artist/12GJRrWKVNDUZAyxE3rKas" },
-    ],
-    socials: [
-      { label: "Instagram", url: "https://www.instagram.com/aoworld/" },
-      { label: "TikTok", url: "https://www.tiktok.com/@aomachine100" },
-      { label: "YouTube", url: "https://youtube.com/@aomachinevevo5401" },
-      { label: "Spotify", url: "https://open.spotify.com/artist/12GJRrWKVNDUZAyxE3rKas" },
-      { label: "Apple Music", url: "https://music.apple.com/us/artist/ao-machine/1568768390" },
-    ],
-    gigs: [
-      { date: "Aug 10", city: "Abidjan", details: "Summer Artist Circuit", ticketUrl: "https://youtube.com/@aomachinevevo5401" },
-      { date: "Nov 16", city: "Kigali", details: "Live Sound Session", ticketUrl: "https://open.spotify.com/artist/12GJRrWKVNDUZAyxE3rKas" },
-    ],
-  },
-  {
-    kind: "musician",
-    slug: "maxino",
-    name: "Maxino",
-    identity: "Artist / Performer",
-    bio: `Talented Nigerian rapper and songwriter, real name Ezaza Maxino, better known by his stage name Maxino, born 4th July. He started at 10, inspired by his parents' love of music and diverse genres. Maxino was a singer and dancer, and in 2004, he joined a crew with whom he created music. He recorded his first studio single, "Little Light Of Mine," produced by Frankie Free, in 2006; next were "I Want More feat. Erigga" and "Copy & Paste," which became an anthem of the street at the time. Maxino graduated in 2015 with a BSc degree in Computer Science from Benson Idahosa University (BIU), Edo State, and also holds an OND from Ahmadu Bello University, Zaria. After school, the rapper moved to Lagos to pursue music full-time. He is a big fan of hip-hop, and his mentors included 50 Cent, The Game, Nas, and other rappers featured in Rap Life. Maxino's goal in making music is to educate the street and feed their souls with sounds and lyrics to nourish them. He says the street is his motivation, and hip-hop is in safe hands with him.`,
-    discography: [
-      { title: "Spotify Profile", link: "https://open.spotify.com/artist/6LTAaKONuHKKWR8ljjIbCA" },
-      { title: "Apple Music Profile", link: "https://music.apple.com/us/artist/maxino/996564407" },
-    ],
-    mediaEmbeds: [
-      { platform: "YouTube", link: "https://youtube.com/@aomachinevevo5401" },
-      { platform: "Spotify", link: "https://open.spotify.com/artist/6LTAaKONuHKKWR8ljjIbCA" },
-    ],
-    socials: [
-      { label: "Instagram", url: "https://www.instagram.com/mvxino/" },
-      { label: "TikTok", url: "https://www.tiktok.com/@maxinod19" },
-      { label: "YouTube", url: "https://youtube.com/@aomachinevevo5401" },
-      { label: "Spotify", url: "https://open.spotify.com/artist/6LTAaKONuHKKWR8ljjIbCA" },
-      { label: "Apple Music", url: "https://music.apple.com/us/artist/maxino/996564407" },
-    ],
-    gigs: [
-      { date: "Jun 11", city: "Lagos", details: "Emerging Stars Set", ticketUrl: "https://youtube.com/@aomachinevevo5401" },
-      { date: "Oct 18", city: "Accra", details: "Afro Urban Showcase", ticketUrl: "https://open.spotify.com/artist/6LTAaKONuHKKWR8ljjIbCA" },
-    ],
-  },
-  {
-    kind: "musician",
-    slug: "nuellah-rose",
-    name: "Nuellah Rose",
-    identity: "Vocal Artist",
-    bio: "Nuellah Rose blends expressive vocals and storytelling with a contemporary, audience-forward release strategy.",
-    discography: [
-      { title: "Spotify Profile", link: "https://open.spotify.com/artist/5bkSU6wyev45e33puJMNSY" },
-      { title: "Apple Music Profile", link: "https://music.apple.com/us/artist/nuellah-rose/1597734751" },
-    ],
-    mediaEmbeds: [
-      { platform: "Spotify", link: "https://open.spotify.com/artist/5bkSU6wyev45e33puJMNSY" },
-      { platform: "Apple Music", link: "https://music.apple.com/us/artist/nuellah-rose/1597734751" },
-    ],
-    socials: [
-      { label: "Instagram", url: "https://www.instagram.com/_nuellahrose_" },
-      { label: "X", url: "https://x.com/nuellahrose" },
-      { label: "Spotify", url: "https://open.spotify.com/artist/5bkSU6wyev45e33puJMNSY" },
-      { label: "Apple Music", url: "https://music.apple.com/us/artist/nuellah-rose/1597734751" },
-    ],
-    gigs: [
-      { date: "Jul 20", city: "Lagos", details: "Rose Room Live", ticketUrl: "https://open.spotify.com/artist/5bkSU6wyev45e33puJMNSY" },
-      { date: "Dec 05", city: "Toronto", details: "Winter Showcase", ticketUrl: "https://music.apple.com/us/artist/nuellah-rose/1597734751" },
-    ],
-  },
+  // {
+  //   kind: "musician",
+  //   slug: "eld3r",
+  //   name: "ELD3R",
+  //   identity: "Alternative Artist",
+  //   bio: "ELD3R crafts emotionally rich records with modern production and a strong digital-native audience connection.",
+  //   discography: [
+  //     { title: "Spotify Profile", link: "https://open.spotify.com/artist/77HukpCjCtGDQSCmYLi5vc" },
+  //     { title: "Apple Music Profile", link: "https://music.apple.com/us/artist/eld3r/1691283169" },
+  //   ],
+  //   mediaEmbeds: [
+  //     { platform: "YouTube", link: "https://youtube.com/@the.eld3r" },
+  //     { platform: "Spotify", link: "https://open.spotify.com/artist/77HukpCjCtGDQSCmYLi5vc" },
+  //   ],
+  //   socials: [
+  //     { label: "Instagram", url: "https://www.instagram.com/the.eld3r" },
+  //     { label: "TikTok", url: "https://www.tiktok.com/@the.eld3r" },
+  //     { label: "X", url: "https://x.com/the_eld3r" },
+  //     { label: "YouTube", url: "https://youtube.com/@the.eld3r" },
+  //     { label: "Spotify", url: "https://open.spotify.com/artist/77HukpCjCtGDQSCmYLi5vc" },
+  //     { label: "Apple Music", url: "https://music.apple.com/us/artist/eld3r/1691283169" },
+  //   ],
+  //   gigs: [
+  //     { date: "Jun 29", city: "Accra", details: "Indie Night Circuit", ticketUrl: "https://youtube.com/@the.eld3r" },
+  //     { date: "Nov 08", city: "Johannesburg", details: "Alt City Session", ticketUrl: "https://open.spotify.com/artist/77HukpCjCtGDQSCmYLi5vc" },
+  //   ],
+  // },
+  // {
+  //   kind: "musician",
+  //   slug: "kehne",
+  //   name: "KEHNE",
+  //   identity: "Singer / Songwriter",
+  //   bio: "KEHNE develops polished melodic records with strong vocal identity and performance-ready compositions.",
+  //   discography: [
+  //     { title: "Spotify Profile", link: "https://open.spotify.com/artist/64YrHk9Eas75hAl2q5y6o1" },
+  //     { title: "Apple Music Profile", link: "https://music.apple.com/us/artist/kehne/1704151462" },
+  //   ],
+  //   mediaEmbeds: [
+  //     { platform: "YouTube", link: "https://youtube.com/@kehnne" },
+  //     { platform: "Spotify", link: "https://open.spotify.com/artist/64YrHk9Eas75hAl2q5y6o1" },
+  //   ],
+  //   socials: [
+  //     { label: "Instagram", url: "https://www.instagram.com/kehnnne" },
+  //     { label: "TikTok", url: "https://www.tiktok.com/@kehnnne" },
+  //     { label: "X", url: "https://x.com/kehnnne" },
+  //     { label: "YouTube", url: "https://youtube.com/@kehnne" },
+  //     { label: "Spotify", url: "https://open.spotify.com/artist/64YrHk9Eas75hAl2q5y6o1" },
+  //     { label: "Apple Music", url: "https://music.apple.com/us/artist/kehne/1704151462" },
+  //   ],
+  //   gigs: [
+  //     { date: "May 31", city: "Lagos", details: "Writers & Voices Session", ticketUrl: "https://youtube.com/@kehnne" },
+  //     { date: "Sep 27", city: "Nairobi", details: "Soundscape Live", ticketUrl: "https://open.spotify.com/artist/64YrHk9Eas75hAl2q5y6o1" },
+  //   ],
+  // },
+  // {
+  //   kind: "musician",
+  //   slug: "ao-machine",
+  //   name: "AO MACHINE",
+  //   identity: "Recording Artist",
+  //   bio: "AO MACHINE releases energetic records built for crossover audiences and high-visibility campaign moments.",
+  //   discography: [
+  //     { title: "Spotify Profile", link: "https://open.spotify.com/artist/12GJRrWKVNDUZAyxE3rKas" },
+  //     { title: "Apple Music Profile", link: "https://music.apple.com/us/artist/ao-machine/1568768390" },
+  //   ],
+  //   mediaEmbeds: [
+  //     { platform: "YouTube", link: "https://youtube.com/@aomachinevevo5401" },
+  //     { platform: "Spotify", link: "https://open.spotify.com/artist/12GJRrWKVNDUZAyxE3rKas" },
+  //   ],
+  //   socials: [
+  //     { label: "Instagram", url: "https://www.instagram.com/aoworld/" },
+  //     { label: "TikTok", url: "https://www.tiktok.com/@aomachine100" },
+  //     { label: "YouTube", url: "https://youtube.com/@aomachinevevo5401" },
+  //     { label: "Spotify", url: "https://open.spotify.com/artist/12GJRrWKVNDUZAyxE3rKas" },
+  //     { label: "Apple Music", url: "https://music.apple.com/us/artist/ao-machine/1568768390" },
+  //   ],
+  //   gigs: [
+  //     { date: "Aug 10", city: "Abidjan", details: "Summer Artist Circuit", ticketUrl: "https://youtube.com/@aomachinevevo5401" },
+  //     { date: "Nov 16", city: "Kigali", details: "Live Sound Session", ticketUrl: "https://open.spotify.com/artist/12GJRrWKVNDUZAyxE3rKas" },
+  //   ],
+  // },
+  // {
+  //   kind: "musician",
+  //   slug: "maxino",
+  //   name: "Maxino",
+  //   identity: "Artist / Performer",
+  //   bio: `Talented Nigerian rapper and songwriter, real name Ezaza Maxino, better known by his stage name Maxino, born 4th July. He started at 10, inspired by his parents' love of music and diverse genres. Maxino was a singer and dancer, and in 2004, he joined a crew with whom he created music. He recorded his first studio single, "Little Light Of Mine," produced by Frankie Free, in 2006; next were "I Want More feat. Erigga" and "Copy & Paste," which became an anthem of the street at the time. Maxino graduated in 2015 with a BSc degree in Computer Science from Benson Idahosa University (BIU), Edo State, and also holds an OND from Ahmadu Bello University, Zaria. After school, the rapper moved to Lagos to pursue music full-time. He is a big fan of hip-hop, and his mentors included 50 Cent, The Game, Nas, and other rappers featured in Rap Life. Maxino's goal in making music is to educate the street and feed their souls with sounds and lyrics to nourish them. He says the street is his motivation, and hip-hop is in safe hands with him.`,
+  //   discography: [
+  //     { title: "Spotify Profile", link: "https://open.spotify.com/artist/6LTAaKONuHKKWR8ljjIbCA" },
+  //     { title: "Apple Music Profile", link: "https://music.apple.com/us/artist/maxino/996564407" },
+  //   ],
+  //   mediaEmbeds: [
+  //     { platform: "YouTube", link: "https://youtube.com/@aomachinevevo5401" },
+  //     { platform: "Spotify", link: "https://open.spotify.com/artist/6LTAaKONuHKKWR8ljjIbCA" },
+  //   ],
+  //   socials: [
+  //     { label: "Instagram", url: "https://www.instagram.com/mvxino/" },
+  //     { label: "TikTok", url: "https://www.tiktok.com/@maxinod19" },
+  //     { label: "YouTube", url: "https://youtube.com/@aomachinevevo5401" },
+  //     { label: "Spotify", url: "https://open.spotify.com/artist/6LTAaKONuHKKWR8ljjIbCA" },
+  //     { label: "Apple Music", url: "https://music.apple.com/us/artist/maxino/996564407" },
+  //   ],
+  //   gigs: [
+  //     { date: "Jun 11", city: "Lagos", details: "Emerging Stars Set", ticketUrl: "https://youtube.com/@aomachinevevo5401" },
+  //     { date: "Oct 18", city: "Accra", details: "Afro Urban Showcase", ticketUrl: "https://open.spotify.com/artist/6LTAaKONuHKKWR8ljjIbCA" },
+  //   ],
+  // },
+  // {
+  //   kind: "musician",
+  //   slug: "nuellah-rose",
+  //   name: "Nuellah Rose",
+  //   identity: "Vocal Artist",
+  //   bio: "Nuellah Rose blends expressive vocals and storytelling with a contemporary, audience-forward release strategy.",
+  //   discography: [
+  //     { title: "Spotify Profile", link: "https://open.spotify.com/artist/5bkSU6wyev45e33puJMNSY" },
+  //     { title: "Apple Music Profile", link: "https://music.apple.com/us/artist/nuellah-rose/1597734751" },
+  //   ],
+  //   mediaEmbeds: [
+  //     { platform: "Spotify", link: "https://open.spotify.com/artist/5bkSU6wyev45e33puJMNSY" },
+  //     { platform: "Apple Music", link: "https://music.apple.com/us/artist/nuellah-rose/1597734751" },
+  //   ],
+  //   socials: [
+  //     { label: "Instagram", url: "https://www.instagram.com/_nuellahrose_" },
+  //     { label: "X", url: "https://x.com/nuellahrose" },
+  //     { label: "Spotify", url: "https://open.spotify.com/artist/5bkSU6wyev45e33puJMNSY" },
+  //     { label: "Apple Music", url: "https://music.apple.com/us/artist/nuellah-rose/1597734751" },
+  //   ],
+  //   gigs: [
+  //     { date: "Jul 20", city: "Lagos", details: "Rose Room Live", ticketUrl: "https://open.spotify.com/artist/5bkSU6wyev45e33puJMNSY" },
+  //     { date: "Dec 05", city: "Toronto", details: "Winter Showcase", ticketUrl: "https://music.apple.com/us/artist/nuellah-rose/1597734751" },
+  //   ],
+  // },
 ];
 
 export const athletes: AthleteProfile[] = [

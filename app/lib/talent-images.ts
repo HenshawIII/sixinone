@@ -1,13 +1,15 @@
 type TalentKind = "musician" | "athlete";
 
-type TalentImage = {
+export type TalentImage = {
   src: string;
   alt: string;
+  /** Optional crop anchor for roster/profile previews (e.g. `center 12%`). */
+  objectPosition?: string;
 };
 
 const TALENT_IMAGE_MAP: Record<string, TalentImage> = {
   vector: {
-    src: "/vecii.webp",
+    src: "/Vecr.jpeg",
     alt: "Music artist performing under stage lights",
   },
   pdstrn: {
@@ -45,10 +47,12 @@ const TALENT_IMAGE_MAP: Record<string, TalentImage> = {
   "ezekiel-touch": {
     src: "/Ezeikel.jpeg",
     alt: "Seun Ezekiel (TOUCH) — professional boxer portrait",
+    objectPosition: "center top",
   },
   "adeyemi-emmanuel": {
     src: "/Adeyem.jpeg",
     alt: "Adeyemi Emmanuel — professional boxer portrait",
+    objectPosition: "center top",
   },
 };
 
@@ -59,5 +63,6 @@ export function getTalentImage(slug: string, name: string, kind: TalentKind): Ta
   return {
     src: `https://picsum.photos/seed/${slug}/1400/1000`,
     alt: kind === "musician" ? `${name} artist profile image` : `${name} athlete profile image`,
+    objectPosition: kind === "athlete" ? "center top" : undefined,
   };
 }

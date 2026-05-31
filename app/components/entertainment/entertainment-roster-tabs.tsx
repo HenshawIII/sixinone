@@ -4,7 +4,23 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import type { AthleteProfile, MusicianProfile } from "../../lib/site-data";
-import { getTalentImage } from "../../lib/talent-images";
+import { getTalentImage, type TalentImage } from "../../lib/talent-images";
+
+/** Shared athlete card image frame — same height and fit for every profile. */
+function RosterAthletePreview({ image }: { image: TalentImage }) {
+  return (
+    <div className="relative h-48 w-full shrink-0 overflow-hidden bg-[#f3f3f4] sm:h-52">
+      <Image
+        alt={image.alt}
+        className="object-contain object-top px-3 pt-3 pb-2"
+        fill
+        sizes="(max-width: 768px) 100vw, 50vw"
+        src={image.src}
+        style={image.objectPosition ? { objectPosition: image.objectPosition } : undefined}
+      />
+    </div>
+  );
+}
 
 type TabKey = "artists" | "athletes";
 
@@ -111,9 +127,7 @@ export function EntertainmentRosterTabs({
                     key={athlete.slug}
                     className="flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_6px_24px_rgba(0,0,0,0.08)]"
                   >
-                    <div className="relative aspect-4/3 shrink-0">
-                      <Image alt={image.alt} className="object-cover" fill sizes="(max-width: 768px) 100vw, 50vw" src={image.src} />
-                    </div>
+                    <RosterAthletePreview image={image} />
                     <div className="flex min-h-0 flex-1 flex-col p-6">
                       <p className="font-heading text-2xl text-site-text">{athlete.name}</p>
                       <p className="mt-2 text-sm text-[#ffb400]">{athlete.identity}</p>

@@ -45,7 +45,7 @@ export function CompaniesFounderIntro() {
                 <span className="text-brand-primary">Ogunmefun</span>
               </h2>
               <p className="mt-4 max-w-xl text-sm font-medium uppercase tracking-[0.12em] text-site-text sm:text-base" data-reveal-text>
-                B.A. Philosophy, University of Lagos · 2009–2013 · Nigeria
+                B.A. Philosophy, University of Lagos · Nigeria
               </p>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-site-muted sm:text-lg" data-reveal-text>
                 SIX-IN-ONE Group was founded to unite entertainment and publishing under one disciplined growth engine—so talent,

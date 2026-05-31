@@ -1,10 +1,35 @@
-import { brandCampaigns, brandPartnerships } from "../../lib/entertainment-marketing-data";
+import Image from "next/image";
+import {
+  campaignBrandLogos,
+  partnershipBrandLogos,
+  type BrandLogo,
+} from "../../lib/entertainment-marketing-data";
 
-function Chip({ children }: { children: string }) {
+function BrandLogoMarquee({ logos }: { logos: BrandLogo[] }) {
+  if (logos.length === 0) return null;
+
+  const loop = [...logos, ...logos];
+
   return (
-    <span className="inline-flex items-center rounded-full border border-white/18 bg-white/6 px-3 py-1.5 text-left text-xs font-medium leading-snug text-white/92 backdrop-blur-sm sm:px-3.5 sm:text-sm">
-      {children}
-    </span>
+    <div className="relative w-full overflow-x-clip mask-[linear-gradient(to_right,transparent,white_8%,white_92%,transparent)]">
+      <div className="home-brands-marquee-track flex flex-nowrap items-center gap-10 sm:gap-14 md:gap-20">
+        {loop.map((brand, index) => (
+          <div
+            key={`${brand.src}-${index}`}
+            className="relative flex h-11 w-29 shrink-0 items-center justify-center sm:h-12 sm:w-34 md:h-14 md:w-40"
+          >
+            <Image
+              src={brand.src}
+              alt={brand.alt}
+              width={200}
+              height={100}
+              sizes="(max-width: 640px) 116px, 160px"
+              className="max-h-full max-w-full object-contain opacity-[0.92]"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -16,7 +41,7 @@ export function EntertainmentPartnershipsCampaigns() {
           aria-hidden
           className="pointer-events-none h-px w-full bg-linear-to-r from-transparent via-[#ffb400]/55 to-transparent"
         />
-        <div className="section-wrap py-10 sm:py-12 md:py-14">
+        <div className="section-wrap pb-6 pt-10 sm:pb-8 sm:pt-12 md:pt-14">
           <div className="mx-auto max-w-5xl text-center">
             <p className="font-heading text-xs uppercase tracking-[0.3em] text-white/50">Capabilities</p>
             <h2 className="mt-2 font-heading text-2xl text-white sm:text-3xl md:text-4xl">
@@ -26,25 +51,22 @@ export function EntertainmentPartnershipsCampaigns() {
               Affiliations and campaign formats alongside roster and label-services work.
             </p>
           </div>
+        </div>
 
-          <div className="mx-auto mt-8 grid max-w-[94%] sm:max-w-[90%] gap-8 md:mt-10 md:grid-cols-2 md:gap-10 lg:gap-12">
-            <div className="text-left">
-              <h3 className="font-heading text-xs uppercase tracking-[0.2em] text-[#ffb400]">Partnerships</h3>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {brandPartnerships.map((name) => (
-                  <Chip key={name}>{name}</Chip>
-                ))}
-              </div>
-            </div>
-            <div className="text-left">
-              <h3 className="font-heading text-xs uppercase tracking-[0.2em] text-[#ffb400]">Campaigns</h3>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {brandCampaigns.map((name) => (
-                  <Chip key={name}>{name}</Chip>
-                ))}
-              </div>
-            </div>
+        <div className="space-y-8 pb-10 sm:space-y-10 sm:pb-14 md:pb-16">
+        <div>
+            <p className="section-wrap pb-4 font-heading text-xs text-center uppercase tracking-[0.2em] text-[#ffb400] sm:pb-5">
+              Campaigns
+            </p>
+            <BrandLogoMarquee logos={campaignBrandLogos} />
           </div>
+          <div>
+            <p className="section-wrap pb-4 font-heading text-xs text-center uppercase tracking-[0.2em] text-[#ffb400] sm:pb-5">
+              Partnerships
+            </p>
+            <BrandLogoMarquee logos={partnershipBrandLogos} />
+          </div>
+          
         </div>
       </div>
     </section>
