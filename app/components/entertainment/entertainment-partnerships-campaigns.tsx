@@ -11,7 +11,7 @@ function BrandLogoMarquee({ logos }: { logos: BrandLogo[] }) {
   const loop = [...logos, ...logos];
 
   return (
-    <div className="relative w-full overflow-x-clip mask-[linear-gradient(to_right,transparent,white_8%,white_92%,transparent)]">
+    <div className="relative w-full overflow-x-clip mask-[linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
       <div className="home-brands-marquee-track flex flex-nowrap items-center gap-10 sm:gap-14 md:gap-20">
         {loop.map((brand, index) => (
           <div
@@ -36,30 +36,30 @@ function BrandLogoMarquee({ logos }: { logos: BrandLogo[] }) {
 export function EntertainmentPartnershipsCampaigns() {
   return (
     <section className="bg-white pt-0">
-      <div className="mx-auto w-full max-w-full overflow-hidden rounded-t-[2.25rem] bg-site-dark text-white shadow-[0_-12px_48px_rgba(0,0,0,0.25)]">
+      <div className="mx-auto w-full max-w-full overflow-hidden rounded-t-[2.25rem] border-t border-black/6 bg-white! text-site-text">
         <div
           aria-hidden
           className="pointer-events-none h-px w-full bg-linear-to-r from-transparent via-[#ffb400]/55 to-transparent"
         />
-        <div className="section-wrap pb-6 pt-10 sm:pb-8 sm:pt-12 md:pt-14">
+        <div className="section-wrap pb-2 pt-10 sm:pb-2! sm:pt-12 md:pt-14">
           <div className="mx-auto max-w-5xl text-center">
-            <p className="font-heading text-xs uppercase tracking-[0.3em] text-white/50">Capabilities</p>
-            <h2 className="mt-2 font-heading text-2xl text-white sm:text-3xl md:text-4xl">
+            <p className="font-heading text-xs uppercase tracking-[0.3em] text-site-muted">Capabilities</p>
+            <h2 className="mt-2 font-heading text-2xl text-site-text sm:text-3xl md:text-4xl">
               Partnerships &amp; brand campaigns
             </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-white/65 sm:text-base">
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-site-muted sm:text-base">
               Affiliations and campaign formats alongside roster and label-services work.
             </p>
           </div>
         </div>
 
         <div className="space-y-8 pb-10 sm:space-y-10 sm:pb-14 md:pb-16">
-        <div>
+        {/* <div>
             <p className="section-wrap pb-4 font-heading text-xs text-center uppercase tracking-[0.2em] text-[#ffb400] sm:pb-5">
               Campaigns
             </p>
             <BrandLogoMarquee logos={campaignBrandLogos} />
-          </div>
+          </div> */}
           <div>
             <p className="section-wrap pb-4 font-heading text-xs text-center uppercase tracking-[0.2em] text-[#ffb400] sm:pb-5">
               Partnerships

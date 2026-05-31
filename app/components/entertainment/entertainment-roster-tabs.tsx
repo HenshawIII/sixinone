@@ -35,7 +35,7 @@ export function EntertainmentRosterTabs({
 
   return (
     <section className=" bg-black!">
-      <div className="space-y-8 bg-white! w-full rounded-t-[2.25rem] py-16 px-4 sm:px-6 sm:py-20">
+      <div className="space-y-8 bg-white! w-full  py-16 px-4 sm:px-6 sm:py-20">
         <header className="mx-auto max-w-3xl text-center">
           <h2 className="font-heading text-4xl uppercase tracking-[0.02em] text-site-text sm:text-5xl">
             Our Entertainment Roster

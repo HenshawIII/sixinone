@@ -43,10 +43,8 @@ const PARTNERSHIP_ICON_BY_NAME: Partial<Record<(typeof brandPartnerships)[number
 };
 
 const CAMPAIGN_ICON_BY_NAME: Partial<Record<(typeof brandCampaigns)[number], string>> = {
-
   "Hennessy VS Tape": "/brandicons/Hennesy.png",
   "Red Bull 60 Seconds": "/brandicons/redbull.png",
- 
 };
 
 function logosFromNames(
