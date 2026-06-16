@@ -23,7 +23,7 @@ const sliderImages: SliderImage[] = [
     fit: "contain",
     objectPosition: "center top",
   },
-  { src: "/boxYY.JPG", alt: "Boxers performing" },
+  { src: "/boxyy.JPG", alt: "Boxers performing" },
 ];
 
 export function HomeTwoFacesSection() {
