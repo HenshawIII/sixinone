@@ -3,6 +3,8 @@ type TalentKind = "musician" | "athlete";
 export type TalentImage = {
   src: string;
   alt: string;
+  /** Use "contain" for tight portraits so faces are not cropped. */
+  fit?: "cover" | "contain";
   /** Optional crop anchor for roster/profile previews (e.g. `center 12%`). */
   objectPosition?: string;
 };
@@ -21,8 +23,10 @@ const TALENT_IMAGE_MAP: Record<string, TalentImage> = {
     alt: "Afrobeat performer with energetic crowd",
   },
   valka: {
-    src: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1400&q=80",
+    src: "/Valka2.jpg",
     alt: "Valka — Colombian singer and digital creator",
+    fit: "contain",
+    objectPosition: "center top",
   },
   eld3r: {
     src: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1400&q=80",
@@ -50,7 +54,7 @@ const TALENT_IMAGE_MAP: Record<string, TalentImage> = {
     objectPosition: "center top",
   },
   "adeyemi-emmanuel": {
-    src: "/Adeyem.jpeg",
+    src: "/Adeyem1.jpg",
     alt: "Adeyemi Emmanuel — professional boxer portrait",
     objectPosition: "center top",
   },

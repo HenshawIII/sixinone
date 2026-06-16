@@ -87,6 +87,7 @@ export default function ContactPage() {
 
             <div data-reveal>
               <SimpleForm
+                contactAutoReply
                 title="Contact SIX-IN-ONE Group"
                 helper="Share your details and a short message. We will route it to the right team."
                 buttonText="Send Message"

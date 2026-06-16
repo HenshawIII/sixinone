@@ -48,7 +48,7 @@ export function CompaniesFounderIntro() {
                 B.A. Philosophy, University of Lagos · Nigeria
               </p>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-site-muted sm:text-lg" data-reveal-text>
-                SIX-IN-ONE Group was founded to unite entertainment and publishing under one disciplined growth engine—so talent,
+                SIX-IN-ONE Group was founded by Abayomi who has over 12 years experience as a music executive to unite entertainment and publishing under one disciplined growth engine—so talent,
                 catalogs, and partnerships move forward with clarity and commercial staying power.
               </p>
               <p className="mt-4 max-w-xl text-base leading-relaxed text-site-muted sm:text-lg" data-reveal-text>

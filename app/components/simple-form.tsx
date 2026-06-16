@@ -1,6 +1,9 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
+import { EMAILJS_BRAND, sendContactAutoReply } from "../lib/emailjs-contact";
+
+type FormStatus = "idle" | "loading" | "success" | "error";
 
 type SimpleFormProps = {
   title: string;
@@ -9,6 +12,8 @@ type SimpleFormProps = {
   fields?: Array<{ name: string; label: string; type?: string; multiline?: boolean }>;
   dark?: boolean;
   buttonClassName?: string;
+  /** Send a branded EmailJS auto-reply when the contact form is submitted. */
+  contactAutoReply?: boolean;
 };
 
 export function SimpleForm({
@@ -18,29 +23,61 @@ export function SimpleForm({
   fields = [{ name: "email", label: "Email", type: "email" }],
   dark,
   buttonClassName,
+  contactAutoReply = false,
 }: SimpleFormProps) {
-  const [loading, setLoading] = useState(false);
-  const [done, setDone] = useState(false);
-  const [error, setError] = useState("");
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+  const submittingRef = useRef(false);
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setError("");
-    setDone(false);
-    setLoading(true);
+    if (submittingRef.current) return;
 
-    const formData = new FormData(event.currentTarget);
-    const email = String(formData.get("email") || "");
+    submittingRef.current = true;
+    setStatus("loading");
+    setErrorMessage("");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const email = String(formData.get("email") || "").trim();
     if (!email.includes("@")) {
-      setError("Please enter a valid email address.");
-      setLoading(false);
+      setErrorMessage("Please enter a valid email address.");
+      setStatus("error");
+      submittingRef.current = false;
+      return;
+    }
+
+    if (contactAutoReply) {
+      const name = String(formData.get("name") || "").trim();
+      const topic = String(formData.get("topic") || "").trim();
+      const message = String(formData.get("message") || "").trim();
+
+      if (!name || !topic || !message) {
+        setErrorMessage("Please complete all fields before sending.");
+        setStatus("error");
+        submittingRef.current = false;
+        return;
+      }
+
+      try {
+        await sendContactAutoReply({ name, email, topic, message });
+        setStatus("success");
+        form.reset();
+      } catch {
+        setErrorMessage(
+          `We couldn't send your confirmation email. Please try again or email ${EMAILJS_BRAND.supportEmail}.`,
+        );
+        setStatus("error");
+      } finally {
+        submittingRef.current = false;
+      }
       return;
     }
 
     await new Promise((resolve) => setTimeout(resolve, 700));
-    setDone(true);
-    setLoading(false);
-    event.currentTarget.reset();
+    setStatus("success");
+    submittingRef.current = false;
+    form.reset();
   };
 
   return (
@@ -76,11 +113,17 @@ export function SimpleForm({
             )}
           </label>
         ))}
-        <button className={`${buttonClassName ?? "button-brand"} w-full sm:w-auto`} disabled={loading} type="submit">
-          {loading ? "Submitting..." : buttonText}
+        <button
+          className={`${buttonClassName ?? "button-brand"} w-full sm:w-auto`}
+          disabled={status === "loading"}
+          type="submit"
+        >
+          {status === "loading" ? "Submitting..." : buttonText}
         </button>
-        {done ? <p className="text-sm text-brand-blue">Thanks. We received your details.</p> : null}
-        {error ? <p className="text-sm text-brand-red">{error}</p> : null}
+        {status === "success" ? (
+          <p className="text-sm text-brand-blue">Thanks. We received your details.</p>
+        ) : null}
+        {status === "error" ? <p className="text-sm text-brand-red">{errorMessage}</p> : null}
       </form>
     </section>
   );

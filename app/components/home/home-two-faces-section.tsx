@@ -15,15 +15,15 @@ type SliderImage = {
 
 const sliderImages: SliderImage[] = [
   { src: "/Vecr.jpeg", alt: "Vector performing" },
-  { src: "/boxers.jpg", alt: "Boxer performing" },
-  { src: "/artists.jpg", alt: "Artists performing" },
+  { src: "/boxy.JPG", alt: "Boxer performing" },
+  { src: "/Valka1.jpg", alt: "Artists performing", fit: "cover", objectPosition: "center top" },
   {
     src: "https://ik.imagekit.io/ttibelkqm/Portfolio/6in1/Seun.png",
     alt: "Seun Kuti performing",
     fit: "contain",
     objectPosition: "center top",
   },
-  { src: "/boxii.jpg", alt: "Boxers performing" },
+  { src: "/boxYY.JPG", alt: "Boxers performing" },
 ];
 
 export function HomeTwoFacesSection() {

@@ -6,6 +6,26 @@ import { useState } from "react";
 import type { AthleteProfile, MusicianProfile } from "../../lib/site-data";
 import { getTalentImage, type TalentImage } from "../../lib/talent-images";
 
+/** All artist cards share the same 4:3 frame; `fit: "contain"` keeps portraits uncropped inside it. */
+function RosterArtistPreview({ image }: { image: TalentImage }) {
+  const contained = image.fit === "contain";
+
+  return (
+    <div
+      className={`relative aspect-4/3 shrink-0 overflow-hidden ${contained ? "bg-[#f3f3f4]" : ""}`}
+    >
+      <Image
+        alt={image.alt}
+        className={contained ? "object-contain object-top" : "object-cover"}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+        src={image.src}
+        style={image.objectPosition ? { objectPosition: image.objectPosition } : undefined}
+      />
+    </div>
+  );
+}
+
 /** Shared athlete card image frame — same height and fit for every profile. */
 function RosterAthletePreview({ image }: { image: TalentImage }) {
   return (
@@ -93,9 +113,7 @@ export function EntertainmentRosterTabs({
                     key={artist.slug}
                     className="flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_6px_24px_rgba(0,0,0,0.08)]"
                   >
-                    <div className="relative aspect-4/3 shrink-0">
-                      <Image alt={image.alt} className="object-cover" fill sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw" src={image.src} />
-                    </div>
+                    <RosterArtistPreview image={image} />
                     <div className="flex min-h-0 flex-1 flex-col p-6">
                       <p className="font-heading text-2xl text-site-text">{artist.name}</p>
                       <p className="mt-2 text-sm text-[#ffb400]">{artist.identity}</p>
