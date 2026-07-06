@@ -24,8 +24,9 @@ export default function AboutPage() {
       <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "About", path: "/about" }]} />
       <PageReveal />
       <CompaniesAbout />
-      <CompaniesFounderIntro />
       <CompaniesMissionTabs />
+      <CompaniesFounderIntro />
+      
       <SiteCta />
     </>
   );
