@@ -1,34 +1,34 @@
 import type { Metadata } from "next";
+import { BreadcrumbJsonLd } from "../../components/breadcrumb-json-ld";
 import { PageHeroBand } from "../../components/page-hero-band";
 import { PageReveal } from "../../components/page-reveal";
 import { SiteCta } from "../../components/site-cta";
 import { EntertainmentLiveEvents } from "../../components/entertainment/entertainment-live-events";
 import { LiveEventsJsonLd } from "../../components/entertainment/live-events-json-ld";
+import { pageOpenGraph } from "../../lib/seo-metadata";
+
+const title = "Concert & Live Event Management Nigeria – SIX-IN-ONE Entertainment";
+const description =
+  "Live events, concerts, and productions managed by SIX-IN-ONE Entertainment in Lagos, Nigeria, and internationally—including Vector, Olamide, Hennessy Artistry, and major venues.";
 
 export const metadata: Metadata = {
-  title: "Live events",
-  description:
-    "Live events, concerts, and productions managed by SIX-IN-ONE Entertainment in Lagos, Nigeria, and internationally—including Vector, Olamide, Hennessy Artistry, and major venues.",
+  title: { absolute: title },
+  description,
   alternates: { canonical: "/entertainment/live-events" },
-  keywords: [
-    "live events Lagos",
-    "concert management Nigeria",
-    "SIX-IN-ONE Entertainment",
-    "Vector live concert",
-    "Hennessy Artistry",
-  ],
-  openGraph: {
-    title: "Live events | SIX-IN-ONE Entertainment",
-    description:
-      "Selected live events and concert credits: venues, roles, dates, and capacities across Nigeria and the UAE.",
-    url: "/entertainment/live-events",
-  },
+  ...pageOpenGraph("/entertainment/live-events", title, description),
 };
 
 export default function LiveEventsPage() {
   return (
     <>
       <LiveEventsJsonLd />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Entertainment", path: "/entertainment" },
+          { name: "Live events", path: "/entertainment/live-events" },
+        ]}
+      />
       <PageReveal />
       <PageHeroBand
         eyebrow="Live events"

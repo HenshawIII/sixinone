@@ -1,10 +1,10 @@
 "use client";
 
-import { Clock3, Music2, UsersRound, MusicIcon, SportShoe } from "lucide-react";
+import { Clock3, Music2, MusicIcon, SportShoe } from "lucide-react";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { musoCreditsProfileUrl } from "../../lib/label-services-data";
 import { homeCopy } from "../../lib/site-data";
-
 type SliderImage = {
   src: string;
   alt: string;
@@ -96,8 +96,8 @@ export function HomeTwoFacesSection() {
             value="570M+"
             title="Career streams"
             description="570+ million career streams across the company's milestones and roster."
-          />
-          {/* <StatItem
+            footnoteLink={{ href: musoCreditsProfileUrl, label: "View credit index on Muso.ai" }}
+          />          {/* <StatItem
             icon={<UsersRound className="h-8 w-8" strokeWidth={1.8} />}
             value="2.5M+"
             title="Fans"
@@ -105,7 +105,7 @@ export function HomeTwoFacesSection() {
           /> */}
           <StatItem
             icon={<Clock3 className="h-8 w-8" strokeWidth={1.8} />}
-            value="10+"
+            value="12+"
             title="Years of Experience"
             description="Years of strategy, rights management, and growth execution."
           />
@@ -132,11 +132,13 @@ function StatItem({
   value,
   title,
   description,
+  footnoteLink,
 }: {
   icon: ReactNode;
   value: string;
   title: string;
   description: string;
+  footnoteLink?: { href: string; label: string };
 }) {
   return (
     <article className="border-r border-black/6 px-8 md:py-10 py-6 last:border-r-0 lg:px-12">
@@ -144,6 +146,16 @@ function StatItem({
       <p className="mt-16 md:mt-24 font-heading text-4xl md:text-5xl xl:text-6xl leading-none text-site-text">{value}</p>
       {/* <p className="mt-4 font-body text-xl font-medium text-site-text">{title}</p> */}
       <p className="mt-2 max-w-xs text-sm leading-relaxed text-site-muted">{description}</p>
+      {footnoteLink ? (
+        <a
+          href={footnoteLink.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 inline-block text-sm font-semibold text-brand-primary transition hover:opacity-80"
+        >
+          {footnoteLink.label} →
+        </a>
+      ) : null}
     </article>
   );
 }

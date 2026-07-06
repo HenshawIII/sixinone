@@ -4,12 +4,15 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import { FaInstagram, FaLink, FaSpotify, FaTiktok, FaYoutube } from "react-icons/fa6";
+import { BreadcrumbJsonLd } from "../../components/breadcrumb-json-ld";
+import { PersonJsonLd } from "../../components/person-json-ld";
 import { PageHeroBand } from "../../components/page-hero-band";
 import { PageReveal } from "../../components/page-reveal";
 import { SiteCta } from "../../components/site-cta";
 import { allTalent } from "../../lib/site-data";
 import { SimpleForm } from "../../components/simple-form";
 import { getTalentImage } from "../../lib/talent-images";
+import { pageOpenGraph } from "../../lib/seo-metadata";
 
 type Params = { slug: string };
 
@@ -44,24 +47,13 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     return { title: "Talent" };
   }
   const image = getTalentImage(talent.slug, talent.name, talent.kind);
-  const label = talent.kind === "musician" ? "Artist" : "Athlete";
+  const path = `/entertainment/${talent.slug}`;
+  const ogTitle = `${talent.name} | SIX-IN-ONE Group`;
   return {
     title: talent.name,
     description: talent.bio,
-    alternates: { canonical: `/entertainment/${talent.slug}` },
-    openGraph: {
-      title: `${talent.name} | SIX-IN-ONE Group`,
-      description: talent.bio,
-      url: `/entertainment/${talent.slug}`,
-      images: [{ url: image.src, alt: image.alt }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${talent.name} | SIX-IN-ONE Group`,
-      description: talent.bio,
-      images: [image.src],
-    },
-    keywords: [talent.name, "SIX-IN-ONE Group", "SIX-IN-ONE Entertainment", label.toLowerCase()],
+    alternates: { canonical: path },
+    ...pageOpenGraph(path, ogTitle, talent.bio, image.src),
   };
 }
 
@@ -79,6 +71,20 @@ export default async function TalentProfilePage({
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Entertainment", path: "/entertainment" },
+          { name: talent.name, path: `/entertainment/${talent.slug}` },
+        ]}
+      />
+      <PersonJsonLd
+        name={talent.name}
+        description={talent.bio}
+        path={`/entertainment/${talent.slug}`}
+        imageSrc={image.src}
+        jobTitle={talent.identity}
+      />
       <PageReveal />
       <PageHeroBand
         eyebrow={talent.kind === "musician" ? "Artist Profile" : "Athlete Profile"}

@@ -1,27 +1,33 @@
 import type { Metadata } from "next";
+import { BreadcrumbJsonLd } from "../../components/breadcrumb-json-ld";
 import { PageHeroBand } from "../../components/page-hero-band";
 import { PageReveal } from "../../components/page-reveal";
 import { SiteCta } from "../../components/site-cta";
 import { EntertainmentSportsManagement } from "../../components/entertainment/entertainment-sports-management";
+import { pageOpenGraph } from "../../lib/seo-metadata";
 import { athletes } from "../../lib/site-data";
 
+const title = "Boxing & Athlete Management in Nigeria – SIX-IN-ONE Entertainment";
+const description =
+  "Sports management for boxing and combat talent in Nigeria and beyond—training narrative, fight positioning, and roster representation through SIX-IN-ONE Entertainment.";
+
 export const metadata: Metadata = {
-  title: "Sports management",
-  description:
-    "Sports management for boxing and combat talent in Nigeria and beyond—training narrative, fight positioning, and roster representation through SIX-IN-ONE Entertainment.",
+  title: { absolute: title },
+  description,
   alternates: { canonical: "/entertainment/sports-management" },
-  keywords: ["sports management Nigeria", "boxing management Lagos", "athlete representation", "SIX-IN-ONE Entertainment"],
-  openGraph: {
-    title: "Sports management | SIX-IN-ONE Entertainment",
-    description:
-      "Professional sports management aligned with long-term athlete positioning, media, and commercial pathways.",
-    url: "/entertainment/sports-management",
-  },
+  ...pageOpenGraph("/entertainment/sports-management", title, description),
 };
 
 export default function SportsManagementPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Entertainment", path: "/entertainment" },
+          { name: "Sports management", path: "/entertainment/sports-management" },
+        ]}
+      />
       <PageReveal />
       <PageHeroBand
         eyebrow="Sports management"

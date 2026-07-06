@@ -5,18 +5,17 @@ import { HomeTwoFacesSection } from "./components/home/home-two-faces-section";
 import { PageReveal } from "./components/page-reveal";
 import { SiteCta } from "./components/site-cta";
 import { homeCopy } from "./lib/site-data";
+import { pageOpenGraph } from "./lib/seo-metadata";
+
+const title = "SIX-IN-ONE Group – Talent Development, Music & Sports Management";
+const description =
+  "SIX-IN-ONE Group advances entertainment and publishing through talent development, rights strategy, and long-term brand growth.";
 
 export const metadata: Metadata = {
-  title: { absolute: "SIX-IN-ONE Group" },
-  description:
-    "SIX-IN-ONE Group advances entertainment and publishing through talent development, rights strategy, and long-term brand growth.",
+  title: { absolute: title },
+  description,
   alternates: { canonical: "/" },
-  openGraph: {
-    title: "SIX-IN-ONE Group",
-    description:
-      "SIX-IN-ONE Group advances entertainment and publishing through talent development, rights strategy, and long-term brand growth.",
-    url: "/",
-  },
+  ...pageOpenGraph("/", title, description),
 };
 
 export default function Home() {

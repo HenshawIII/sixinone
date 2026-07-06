@@ -3,6 +3,8 @@ export type LiveEvent = {
   venue: string;
   role?: string;
   dateLine: string;
+  /** ISO date for schema markup when the event has a single clear date. */
+  startDate?: string;
   capacity?: string;
   notes?: string;
   /** Rough year for grouping (use first year if range). */
@@ -15,6 +17,7 @@ export const liveEvents: LiveEvent[] = [
     venue: "Freedom Park, Broad Street, Lagos Island, Lagos, Nigeria",
     role: "Concert Manager",
     dateLine: "December 27, 2016",
+    startDate: "2016-12-27",
     capacity: "1,500",
     year: 2016,
   },
@@ -23,6 +26,7 @@ export const liveEvents: LiveEvent[] = [
     venue: "Lekki Phase 1, Lagos, Nigeria",
     role: "Music competition — main headliner: Keri Hilson",
     dateLine: "June 10, 2016",
+    startDate: "2016-06-10",
     capacity: "1,000",
     year: 2016,
   },
@@ -31,6 +35,7 @@ export const liveEvents: LiveEvent[] = [
     venue: "Km47 Lagos/Ibadan Expressway, Nigeria",
     role: "Artist Manager (Vector)",
     dateLine: "December 31, 2017",
+    startDate: "2017-12-31",
     capacity: "3,000",
     notes: "Vector headlined alongside 2face Idibia, Kizz Daniel, and Adekunle Gold.",
     year: 2017,
@@ -40,6 +45,7 @@ export const liveEvents: LiveEvent[] = [
     venue: "Eko Hotel Convention Center, Victoria Island, Lagos, Nigeria",
     role: "Artist Manager (Vector)",
     dateLine: "November 13, 2017",
+    startDate: "2017-11-13",
     capacity: "5,000",
     year: 2017,
   },
@@ -48,6 +54,7 @@ export const liveEvents: LiveEvent[] = [
     venue: "Balmoral Event Center, Federal Palace Casino, Victoria Island, Lagos, Nigeria",
     role: "Artist Manager (Vector)",
     dateLine: "December 8, 2018",
+    startDate: "2018-12-08",
     capacity: "2,000",
     year: 2018,
   },
@@ -64,6 +71,7 @@ export const liveEvents: LiveEvent[] = [
     venue: "Teslim Balogun Stadium, Surulere, Lagos, Nigeria",
     role: "Stage management and artist management",
     dateLine: "December 17, 2017",
+    startDate: "2017-12-17",
     capacity: "20,000 venue capacity",
     notes: "Powered by Lagos State Government.",
     year: 2017,
@@ -90,6 +98,7 @@ export const liveEvents: LiveEvent[] = [
     venue: "Lagos, Nigeria",
     role: "Artist Manager (Vector)",
     dateLine: "December 18, 2019",
+    startDate: "2019-12-18",
     capacity: "3,000",
     year: 2019,
   },
@@ -98,6 +107,7 @@ export const liveEvents: LiveEvent[] = [
     venue: "Lagos, Nigeria",
     role: "Artist Manager (Vector)",
     dateLine: "August 14 and 19, 2019",
+    startDate: "2019-08-14",
     capacity: "5,000",
     year: 2019,
   },
@@ -106,6 +116,7 @@ export const liveEvents: LiveEvent[] = [
     venue: "JW Marriott Marquis, Business Bay, Dubai, UAE",
     role: "Artist Manager (Vector)",
     dateLine: "March 13, 2020",
+    startDate: "2020-03-13",
     capacity: "500",
     year: 2020,
   },
@@ -114,6 +125,7 @@ export const liveEvents: LiveEvent[] = [
     venue: "Lagos, Nigeria",
     role: "Artist Manager (GoodGirl LA)",
     dateLine: "December 18, 2021",
+    startDate: "2021-12-18",
     capacity: "3,000",
     year: 2021,
   },
@@ -122,6 +134,7 @@ export const liveEvents: LiveEvent[] = [
     venue: "Lagos, Nigeria",
     role: "Concert management / Producer",
     dateLine: "January 1, 2024",
+    startDate: "2024-01-01",
     capacity: "3,000",
     year: 2024,
   },
@@ -130,6 +143,7 @@ export const liveEvents: LiveEvent[] = [
     venue: "The Lower Third",
     role: "Artist Manager (Vector)",
     dateLine: "July 5, 2024",
+    startDate: "2024-07-05",
     capacity: "250",
     year: 2024,
   },

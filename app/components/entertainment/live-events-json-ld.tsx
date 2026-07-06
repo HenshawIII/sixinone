@@ -3,6 +3,12 @@ import { liveEvents } from "../../lib/live-events-data";
 
 export function LiveEventsJsonLd() {
   const base = getSiteUrl();
+  const organizer = {
+    "@type": "Organization",
+    name: "SIX-IN-ONE Entertainment",
+    url: `${base}/entertainment`,
+  };
+
   const data = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -17,10 +23,12 @@ export function LiveEventsJsonLd() {
         "@type": "Event",
         name: ev.title,
         description: [ev.role, ev.notes].filter(Boolean).join(" — ") || undefined,
+        startDate: ev.startDate,
         location: {
           "@type": "Place",
           name: ev.venue,
         },
+        organizer,
       },
     })),
   };

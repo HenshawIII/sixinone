@@ -1,33 +1,33 @@
 import type { Metadata } from "next";
+import { BreadcrumbJsonLd } from "../../components/breadcrumb-json-ld";
 import { PageHeroBand } from "../../components/page-hero-band";
 import { PageReveal } from "../../components/page-reveal";
 import { SiteCta } from "../../components/site-cta";
 import { EntertainmentIndependentArtists } from "../../components/entertainment/entertainment-independent-artists";
+import { pageOpenGraph } from "../../lib/seo-metadata";
 import Link from "next/link";
 
+const title = "Independent artists | SIX-IN-ONE Entertainment";
+const description =
+  "Label services for independent artists in Lagos, Ghana, and West Africa—A&R, product management, releases, and credits through SIX-IN-ONE Entertainment.";
+
 export const metadata: Metadata = {
-  title: "Independent artists",
-  description:
-    "Label services for independent artists in Lagos, Ghana, and West Africa—A&R, product management, releases, and credits through SIX-IN-ONE Entertainment.",
+  title: { absolute: title },
+  description,
   alternates: { canonical: "/entertainment/independent-artists" },
-  keywords: [
-    "independent artists West Africa",
-    "label services Lagos",
-    "A&R Ghana",
-    "SIX-IN-ONE Entertainment",
-    "music product management",
-  ],
-  openGraph: {
-    title: "Independent artists | SIX-IN-ONE Entertainment",
-    description:
-      "Release planning, A&R, and product management for independent artists—with select label-services credits and Muso.ai index.",
-    url: "/entertainment/independent-artists",
-  },
+  ...pageOpenGraph("/entertainment/independent-artists", title, description),
 };
 
 export default function IndependentArtistsPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Entertainment", path: "/entertainment" },
+          { name: "Independent artists", path: "/entertainment/independent-artists" },
+        ]}
+      />
       <PageReveal />
       <PageHeroBand
         eyebrow="Independent artists"

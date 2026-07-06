@@ -1,5 +1,5 @@
 export const ENTERTAINMENT_ABOUT_COPY =
-  "At SIX-IN-ONE Entertainment, we thrive on meticulous attention to detail and managing project budgets effectively. We blend critical thinking with practical management skills, nurturing brands and exploring new business avenues so every product ideation aligns with our strategic vision—balancing creative aspirations with commercial realities in talent management and music.";
+  "SIX-IN-ONE Entertainment is an independent entertainment company based in Lagos, Nigeria. We develop and represent a roster of recording artists, songwriters, and professional athletes—managing careers from debut to global release and live performance.";
 
 export function EntertainmentAbout() {
   return (

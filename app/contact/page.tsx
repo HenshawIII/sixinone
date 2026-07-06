@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
-import { Mail, MapPin, MessageSquareMore } from "lucide-react";
+import { Mail, MapPin, MessageSquareMore, Phone } from "lucide-react";
+import { BreadcrumbJsonLd } from "../components/breadcrumb-json-ld";
 import { PageHeroBand } from "../components/page-hero-band";
 import { PageReveal } from "../components/page-reveal";
 import { SiteCta } from "../components/site-cta";
 import { SimpleForm } from "../components/simple-form";
-import { officeLocations, siteEmail } from "../lib/site-contact";
+import { officeLocations, siteEmail, sitePhoneDisplay, sitePhoneTel } from "../lib/site-contact";
+import { pageOpenGraph } from "../lib/seo-metadata";
+
+const title = "Contact | SIX-IN-ONE Group";
+const description =
+  "Contact SIX-IN-ONE Group in Lagos, Nigeria and Amsterdam for talent representation, publishing, licensing, and partnerships.";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description:
-    "Contact SIX-IN-ONE Group in Lagos, Nigeria and Amsterdam for talent representation, publishing, licensing, and partnerships.",
+  description,
   alternates: { canonical: "/contact" },
-  openGraph: {
-    title: "Contact | SIX-IN-ONE Group",
-    description:
-      "Contact SIX-IN-ONE Group in Lagos, Nigeria and Amsterdam for talent representation, publishing, licensing, and partnerships.",
-    url: "/contact",
-  },
+  ...pageOpenGraph("/contact", title, description),
 };
 
 const contactTopics = [
@@ -29,6 +29,7 @@ const contactTopics = [
 export default function ContactPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]} />
       <PageReveal />
       <PageHeroBand
         eyebrow="Contact"
@@ -49,12 +50,19 @@ export default function ContactPage() {
                 Tell us what you are working on and the right team will follow up. We usually respond to priority enquiries
                 quickly.
               </p>
-              <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" data-reveal-stagger>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-reveal-stagger>
                 <article className="rounded-2xl border border-black/10 bg-white p-4">
                   <Mail className="h-5 w-5 text-brand-primary" />
                   <p className="mt-3 font-semibold text-site-text">Email</p>
                   <a className="text-sm text-site-muted transition hover:text-site-text" href={`mailto:${siteEmail}`}>
                     {siteEmail}
+                  </a>
+                </article>
+                <article className="rounded-2xl border border-black/10 bg-white p-4">
+                  <Phone className="h-5 w-5 text-brand-primary" />
+                  <p className="mt-3 font-semibold text-site-text">Phone</p>
+                  <a className="text-sm text-site-muted transition hover:text-site-text" href={`tel:${sitePhoneTel}`}>
+                    {sitePhoneDisplay}
                   </a>
                 </article>
                 {officeLocations.map((office) => (
@@ -70,7 +78,7 @@ export default function ContactPage() {
                     </address>
                   </article>
                 ))}
-                <article className="rounded-2xl border border-black/10 bg-white p-4 sm:col-span-2 lg:col-span-1">
+                <article className="rounded-2xl border border-black/10 bg-white p-4 sm:col-span-2 lg:col-span-3">
                   <MessageSquareMore className="h-5 w-5 text-brand-primary" />
                   <p className="mt-3 font-semibold text-site-text">Best for</p>
                   <p className="text-sm text-site-muted">Talent, publishing, media, partnerships</p>

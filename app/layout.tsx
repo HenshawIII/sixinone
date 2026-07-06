@@ -3,6 +3,7 @@ import "./globals.css";
 import { SiteFooter } from "./components/site-footer";
 import { SiteHeader } from "./components/site-header";
 import { SiteJsonLd } from "./components/site-json-ld";
+import { absoluteOgImage, SITE_OG_DEFAULT } from "./lib/seo-metadata";
 import { getSiteUrl } from "./lib/site-url";
 
 const siteUrl = getSiteUrl();
@@ -18,16 +19,6 @@ export const metadata: Metadata = {
   },
   description: defaultDescription,
   applicationName: defaultTitle,
-  keywords: [
-    "SIX-IN-ONE Group",
-    "entertainment",
-    "publishing",
-    "talent development",
-    "music",
-    "sports",
-    "licensing",
-    "brand development",
-  ],
   authors: [{ name: "SIX-IN-ONE Group", url: siteUrl }],
   creator: "SIX-IN-ONE Group",
   publisher: "SIX-IN-ONE Group",
@@ -48,13 +39,13 @@ export const metadata: Metadata = {
     siteName: defaultTitle,
     title: defaultTitle,
     description: defaultDescription,
-    images: [{ url: "/logoGroup.png", alt: "SIX-IN-ONE Group" }],
+    images: [{ url: absoluteOgImage(SITE_OG_DEFAULT), alt: "SIX-IN-ONE Group" }],
   },
   twitter: {
     card: "summary_large_image",
     title: defaultTitle,
     description: defaultDescription,
-    images: ["/logoGroup.png"],
+    images: [absoluteOgImage(SITE_OG_DEFAULT)],
   },
   robots: {
     index: true,

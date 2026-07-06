@@ -1,31 +1,32 @@
 import type { Metadata } from "next";
+import { BreadcrumbJsonLd } from "../components/breadcrumb-json-ld";
 import { CompaniesAbout } from "../components/companies/companies-about";
 import { CompaniesFounderIntro } from "../components/companies/companies-founder-intro";
 import { CompaniesMissionTabs } from "../components/companies/companies-mission-tabs";
 import { PageReveal } from "../components/page-reveal";
 import { SiteCta } from "../components/site-cta";
+import { pageOpenGraph } from "../lib/seo-metadata";
+
+const title = "About SIX-IN-ONE Group – Entertainment & Publishing Company, Lagos";
+const description =
+  "Learn how SIX-IN-ONE Group unites entertainment and publishing in Lagos to help creators build durable careers, led by founder Abayomi Noah Ogunmefun.";
 
 export const metadata: Metadata = {
-  title: "About",
-  description:
-    "Learn how SIX-IN-ONE Group unites entertainment and publishing to help creators build durable careers and long-term commercial value.",
+  title: { absolute: title },
+  description,
   alternates: { canonical: "/about" },
-  openGraph: {
-    title: "About | SIX-IN-ONE Group",
-    description:
-      "Learn how SIX-IN-ONE Group unites entertainment and publishing to help creators build durable careers and long-term commercial value.",
-    url: "/about",
-  },
+  ...pageOpenGraph("/about", title, description),
 };
 
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "About", path: "/about" }]} />
       <PageReveal />
       <CompaniesAbout />
-      <CompaniesMissionTabs />
       <CompaniesFounderIntro />
-      <SiteCta title="Need the right division for your next move?" />
+      <CompaniesMissionTabs />
+      <SiteCta />
     </>
   );
 }

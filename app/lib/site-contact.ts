@@ -18,6 +18,9 @@ export const officeLocations: OfficeLocation[] = [
 ];
 
 export const siteEmail = "hello@sixinonegroup.com" as const;
+export const sitePhone = "+234 813 494 9119" as const;
+export const sitePhoneDisplay = "0 813 494 9119" as const;
+export const sitePhoneTel = "+2348134949119" as const;
 
 export type SocialLink = {
   label: string;

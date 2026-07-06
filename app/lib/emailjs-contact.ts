@@ -7,7 +7,7 @@ export const EMAILJS_AUTO_REPLY_TEMPLATE_ID = "template_rszt5j3";
 export const EMAILJS_BRAND = {
   footerLogo: "https://ik.imagekit.io/ttibelkqm/Portfolio/6in1/logoGroup.png",
   headerLogo: "https://ik.imagekit.io/ttibelkqm/Portfolio/6in1/iconG.png",
-  siteUrl: "https://sixinonegroup.com",
+  siteUrl: "https://www.sixinonegroup.com",
   companyName: "SIX-IN-ONE Group",
   supportEmail: "hello@sixinonegroup.com",
 } as const;

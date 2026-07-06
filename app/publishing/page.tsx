@@ -1,28 +1,29 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BreadcrumbJsonLd } from "../components/breadcrumb-json-ld";
 import { LicensingTabs } from "../components/licensing-tabs";
 import { PageHeroBand } from "../components/page-hero-band";
 import { PageReveal } from "../components/page-reveal";
 import { SiteCta } from "../components/site-cta";
 import { PublishingSyncDeals } from "../components/publishing/publishing-sync-deals";
+import { pageOpenGraph } from "../lib/seo-metadata";
 import { licensingTabs, publishingContributors } from "../lib/site-data";
 
+const title = "Music Publishing, Sync Licensing & Rights Strategy – SIX-IN-ONE";
+const description =
+  "SIX-IN-ONE Publishing manages sync licensing and rights strategy. Credits include EA Games Apex Legends and the Basketball Africa League.";
+
 export const metadata: Metadata = {
-  title: "Publishing",
-  description:
-    "SIX-IN-ONE Publishing offers co-publishing, rights structure, licensing, and catalog strategy for songwriters, composers, and rights holders.",
+  title: { absolute: title },
+  description,
   alternates: { canonical: "/publishing" },
-  openGraph: {
-    title: "Publishing | SIX-IN-ONE Group",
-    description:
-      "SIX-IN-ONE Publishing offers co-publishing, rights structure, licensing, and catalog strategy for songwriters, composers, and rights holders.",
-    url: "/publishing",
-  },
+  ...pageOpenGraph("/publishing", title, description),
 };
 
 export default function PublishingPage() {
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: "Home", path: "/" }, { name: "Publishing", path: "/publishing" }]} />
       <PageReveal />
       <PageHeroBand
         eyebrow="Publishing"

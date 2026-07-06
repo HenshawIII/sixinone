@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   description:
     "Read company updates and industry perspective from SIX-IN-ONE Group across entertainment, publishing, rights, and roster growth.",
   alternates: { canonical: "/blog" },
+  robots: { index: false, follow: false },
   openGraph: {
     title: "Blog | SIX-IN-ONE Group",
     description:

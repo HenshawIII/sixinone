@@ -3,9 +3,10 @@ import { getSiteUrl } from "../lib/site-url";
 
 export function SiteJsonLd() {
   const url = getSiteUrl();
-  const data = {
+  const organization = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${url}/#organization`,
     name: "SIX-IN-ONE Group",
     url,
     logo: `${url}/logoGroup.png`,
@@ -27,7 +28,19 @@ export function SiteJsonLd() {
     })),
   };
 
+  const website = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${url}/#website`,
+    name: "SIX-IN-ONE Group",
+    url,
+    publisher: { "@id": `${url}/#organization` },
+  };
+
   return (
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }} />
+    </>
   );
 }

@@ -62,7 +62,6 @@ export function SiteFooter() {
                 links={[
                   { href: "/", label: "Home" },
                   { href: "/about", label: "About" },
-                  { href: "/blog", label: "Blog" },
                 ]}
               />
               <FooterLinkGroup
