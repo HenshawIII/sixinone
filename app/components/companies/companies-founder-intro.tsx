@@ -1,12 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import { siteFaqCategories } from "../../lib/faq-data";
+import { siteEmail } from "../../lib/site-contact";
 import { FounderSocialIcons } from "../footer-social-icons";
 
 export function CompaniesFounderIntro() {
   return (
-    <section className=" overflow-hidden bg-black!">
-      <div className=" rounded-t-[2.25rem] bg-white! py-16 px-4">
+    <section className="overflow-hidden bg-black!">
+      <div className="rounded-t-[2.25rem] bg-white! py-16 px-4">
         <div className="relative mx-auto max-w-[94%] sm:max-w-[90%]">
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-12 lg:items-center">
             <div className="relative lg:col-span-5" data-reveal>
@@ -29,43 +31,37 @@ export function CompaniesFounderIntro() {
                   />
                   <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-transparent" />
                 </div>
-              
               </figure>
             </div>
 
             <div className="lg:col-span-7">
-              <p className="font-heading text-[0.7rem] uppercase tracking-[0.35em] text-site-muted sm:text-xs" data-reveal-text>
+              <p
+                className="font-heading text-[0.7rem] uppercase tracking-[0.35em] text-site-muted sm:text-xs"
+                data-reveal-text
+              >
                 Founder
               </p>
               <h2
                 className="mt-3 font-heading text-3xl leading-[1.08] tracking-[0.02em] text-site-text sm:text-4xl lg:text-[2.65rem]"
                 data-reveal-text
               >
-                Abayomi Noah{" "}
-                <span className="text-brand-primary">Ogunmefun</span>
+                Abayomi Noah <span className="text-brand-primary">Ogunmefun</span>
               </h2>
-              <p className="mt-4 max-w-xl text-sm font-medium uppercase tracking-[0.12em] text-site-text sm:text-base" data-reveal-text>
+              <p
+                className="mt-4 max-w-xl text-sm font-medium uppercase tracking-[0.12em] text-site-text sm:text-base"
+                data-reveal-text
+              >
                 B.A. Philosophy, University of Lagos · Nigeria
               </p>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-site-muted sm:text-lg" data-reveal-text>
-                SIX-IN-ONE Group was founded by Abayomi who has over 12 years experience as a music executive to unite entertainment and publishing under one disciplined growth engine—so talent,
-                catalogs, and partnerships move forward with clarity and commercial staying power.
+                SIX-IN-ONE Group was founded by Abayomi who has over 12 years experience as a music executive to unite
+                entertainment and publishing under one disciplined growth engine—so talent, catalogs, and partnerships
+                move forward with clarity and commercial staying power.
               </p>
               <p className="mt-4 max-w-xl text-base leading-relaxed text-site-muted sm:text-lg" data-reveal-text>
                 The vision is straightforward: protect creators, sharpen positioning, and open doors that compound—whether
                 on stage, on-field, or across rights and licensing globally.
               </p>
-
-              {/* <div className="mt-8 flex flex-wrap gap-2">
-                {["Vision-led", "Talent-first", "Partnerships"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-black/10 bg-white px-4 py-2 text-xs font-medium uppercase tracking-[0.12em] text-site-text shadow-sm"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div> */}
 
               <div data-reveal-stagger className="mt-10 space-y-5">
                 <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
@@ -78,14 +74,106 @@ export function CompaniesFounderIntro() {
                   </Link>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-site-muted">Connect with the founder</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-site-muted">
+                    Connect with the founder
+                  </p>
                   <FounderSocialIcons className="mt-3" />
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div
+            id="faq"
+            className="mt-16 scroll-mt-28 border-t border-black/8 pt-14 sm:mt-20 sm:pt-16"
+            data-reveal
+          >
+            <header className="max-w-3xl">
+              <p
+                className="font-heading text-[0.7rem] uppercase tracking-[0.35em] text-site-muted sm:text-xs"
+                data-reveal-text
+              >
+                FAQ
+              </p>
+              <h2
+                className="mt-3 font-heading text-3xl leading-[1.08] tracking-[0.02em] text-site-text sm:text-4xl"
+                data-reveal-text
+              >
+                Frequently asked <span className="text-brand-primary">questions</span>
+              </h2>
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-site-muted sm:text-lg" data-reveal-text>
+                Straight answers on who we are, how the divisions work, how we develop talent, and how to get in touch.
+              </p>
+            </header>
+
+            <div className="mt-10 space-y-12" data-reveal-stagger>
+              {siteFaqCategories.map((category) => (
+                <div key={category.title}>
+                  <h3 className="font-heading text-xs uppercase tracking-[0.28em] text-brand-primary sm:text-sm">
+                    {category.title}
+                  </h3>
+                  <div className="mt-4 divide-y divide-black/8 overflow-hidden rounded-2xl border border-black/8 bg-white shadow-[0_8px_28px_rgba(15,23,42,0.05)] ring-1 ring-black/3">
+                    {category.items.map((item) => (
+                      <details key={item.question} className="group">
+                        <summary className="flex cursor-pointer list-none items-start justify-between gap-4 px-5 py-4 text-left transition hover:bg-black/2 sm:px-6 sm:py-5 [&::-webkit-details-marker]:hidden">
+                          <span className="font-heading text-base leading-snug text-site-text sm:text-lg">
+                            {item.question}
+                          </span>
+                          <ChevronDown
+                            className="mt-1 h-5 w-5 shrink-0 text-site-muted transition group-open:rotate-180 group-open:text-brand-primary"
+                            aria-hidden
+                          />
+                        </summary>
+                        <div className="border-t border-black/6 px-5 pb-5 pt-3 sm:px-6 sm:pb-6">
+                          <FaqAnswer text={item.answer} />
+                        </div>
+                      </details>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
     </section>
   );
+}
+
+function FaqAnswer({ text }: { text: string }) {
+  const blocks = text.split("\n\n");
+
+  return (
+    <div className="space-y-3 text-sm leading-relaxed text-site-muted sm:text-base">
+      {blocks.map((block) => (
+        <p key={block.slice(0, 48)}>{renderInlineLinks(block)}</p>
+      ))}
+    </div>
+  );
+}
+
+function renderInlineLinks(text: string) {
+  const parts = text.split(/(\/contact|hello@sixinonegroup\.com)/g);
+
+  return parts.map((part, index) => {
+    if (part === "/contact") {
+      return (
+        <Link key={`${part}-${index}`} href="/contact" className="font-semibold text-brand-primary transition hover:opacity-80">
+          sixinonegroup.com/contact
+        </Link>
+      );
+    }
+    if (part === siteEmail || part === "hello@sixinonegroup.com") {
+      return (
+        <a
+          key={`${part}-${index}`}
+          href={`mailto:${siteEmail}`}
+          className="font-semibold text-brand-primary transition hover:opacity-80"
+        >
+          {siteEmail}
+        </a>
+      );
+    }
+    return <span key={`${part}-${index}`}>{part}</span>;
+  });
 }

@@ -7,7 +7,7 @@ import { SiteCta } from "./components/site-cta";
 import { homeCopy } from "./lib/site-data";
 import { pageOpenGraph } from "./lib/seo-metadata";
 
-const title = "SIX-IN-ONE Group – Talent Development, Music & Sports Management";
+const title = "SIX-IN-ONE Group – Talent Development, Music, Film & Sports Management";
 const description =
   "SIX-IN-ONE Group advances entertainment and publishing through talent development, rights strategy, and long-term brand growth.";
 

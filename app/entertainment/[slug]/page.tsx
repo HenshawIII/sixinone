@@ -197,7 +197,7 @@ export default async function TalentProfilePage({
                 </div>
               </section>
               <section data-reveal className="surface-card">
-                <h3 className="font-heading text-2xl text-site-text" data-reveal-text>Upcoming Events</h3>
+                <h3 className="font-heading text-2xl text-site-text" data-reveal-text>Coming Soon</h3>
                 <ul className="mt-4 space-y-3 text-site-muted" data-reveal-stagger>
                   {talent.gigs.map((gig) => (
                     <li key={`${gig.date}-${gig.city}`} className="rounded-2xl border border-black/10 p-4">
